@@ -1,0 +1,193 @@
+.filters {
+    height: 1100 * $px; //
+    background-color: $light_beige;
+    .filters_header {
+        padding-top: 85 * $px;
+        text-transform: uppercase;
+        font-family: Medium;
+        font-size: $fs_36;
+    }
+    .filters_title {
+        font-family: Medium;
+        font-size: $fs_30;
+    }
+    .filters_main {
+        padding: 0 30 * $px;
+        .sort_by_price,
+        .sort_by_kcal {
+            @extend %clear;
+            margin-top: 50 * $px;
+            .filters_title {
+                float: left;
+                padding-top: 10 * $px;
+            }
+            .total {
+                float: right;
+                .total_num {
+                    display: inline-block;
+                    width: 150 * $px;
+                    text-align: center;
+                    border-bottom: 2 * $px solid #737373;
+                    font-size: 40 * $px;
+                }
+            }
+            .slider-container {
+                margin: 50 * $px auto;
+                .selected-bar {
+                    background-color: $deep_red;
+                }
+                .pointer.high {
+                    background-color: $deep_red;
+                }
+            }
+        }
+        .filter_button_ingr {
+            margin-top: 70 * $px;
+        }
+        .filter_button_alerg {
+            margin: 30 * $px 0;
+        }
+        .filter_button_ingr,
+        .filter_button_alerg {
+            $height: 110 * $px;
+            position: relative;
+            width: 100%;
+            height: $height;
+            background-color: $light_green;
+            color: white;
+            text-align: center;
+            line-height: $height;
+            font-family: Medium;
+            font-size: $fs_30;
+            &.active:after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 30 * $px;
+                height: 30 * $px;
+                border-radius: 50%;
+                top: 50%;
+                margin-top: -15 * $px;
+                right: 30 * $px;
+                background-color: $light_beige;
+            }
+        }
+    }
+    .filters_main_bottom_buttons {
+        $height: 140 * $px;
+        display: flex;
+        height: $height;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        .filters_close,
+        .filters_reset {
+            position: relative;
+            flex: 1;
+            background-color: $deep_beige;
+            img {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                margin: auto;
+                transform: translateY(-50%);
+                width: 53 * $px;
+                height: auto;
+            }
+        }
+        .filters_found {
+            flex: 3.5;
+            background-color: $deep_red;
+            color: $light_beige;
+            line-height: $height;
+            text-align: center;
+            font-family: Medium;
+            font-size: 26 * $px;
+        }
+    }
+    .filters_ingridients,
+    .filters_allergens {
+        $height: 110 * $px;
+        .filters_header {
+            padding-right: 30 * $px;
+            padding-left: 30 * $px;
+            padding-bottom: 30 * $px;
+        }
+        .filters_category {
+            text-align: center;
+            line-height: $height;
+            .filters_title {
+                height: $height;
+                text-transform: uppercase;
+                background-color: #ddcaac;
+            }
+            .filters_toggle {
+                background-color: #c1af92;
+                padding: 10 * $px;
+                img {
+                    width: 25 * $px;
+                    height: auto;
+                    margin: auto;
+                }
+            }
+            ul li {
+                position: relative;
+                height: $height;
+                line-height: $height;
+                border-bottom: 2 * $px solid $deep_beige;
+                font-size: $fs_30;
+                .filter_add,
+                .filter_remove {
+                    position: absolute;
+                    width: 30%;
+                    height: 100%;
+                }
+                .filter_add {
+                    left: 0;
+                    background-image: linear-gradient(to right, rgba(211, 47, 47, 0.3) 0%, rgba(255, 255, 255, 0) 100%)
+                }
+                .filter_remove {
+                    right: 0;
+                    background-image: linear-gradient(to left, rgba(61, 175, 117, 0.3) 0%, rgba(255, 255, 255, 0) 100%)
+                }
+                .filter_delete {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(211, 47, 47, 0.3)
+                }
+            }
+        }
+    }
+    .filters_footer {
+        $height: 140 * $px;
+        display: flex;
+        height: $height;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        .filters_footer_back {
+            position: relative;
+            flex: 2;
+            background-color: $deep_beige;
+            img {
+                position: absolute;
+                top: 50%;
+                left: 30 * $px;
+                transform: translateY(-50%);
+                width: 53 * $px;
+                height: auto;
+            }
+        }
+        .filter_footer_found {
+            flex: 3.5;
+            background-color: $deep_red;
+            color: $light_beige;
+            line-height: $height;
+            text-align: center;
+            font-family: Medium;
+            font-size: 26 * $px;
+        }
+    }
+}

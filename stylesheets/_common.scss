@@ -2,8 +2,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-    background-color: $light_beige;
-
+    background-color: $deep_beige;
     @include standart_font;
 }
 
@@ -18,7 +17,17 @@ input {
         outline: none;
     }
 }
-h1, h2, h3, h4, h5, h6, p {
-    margin:0;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
 }
 
+.clear {
+    clear: both
+}

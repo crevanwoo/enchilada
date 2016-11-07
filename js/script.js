@@ -286,3 +286,35 @@ $('.allerg_close').on('click', function () {
     $('.pop_allergens').css('opacity', '0');
     setTimeout($('.pop_allergens').css('display', 'none'), 500)
 })
+
+
+
+
+
+
+
+
+$('.slider_price').jRange({
+    from: 10,
+    to: 100,
+    step: 1,
+    scale: [10, 100],
+    format: '%s',
+    width: "100%",
+    theme: "theme-red",
+    showLabels: false,
+
+
+});
+
+$('.slider_kcal').jRange({
+    from: 50,
+    to: 2000,
+    step: 50,
+    scale: [50, 2000],
+    format: '%s',
+    width: "100%",
+    theme: "theme-red",
+    showLabels: false,
+
+});

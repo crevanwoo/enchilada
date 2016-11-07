@@ -164,7 +164,7 @@ input:-moz-placeholder {
     }
 }
 
-@keyframes next_button_line{
+@keyframes next_button_line {
     from {
         transform: translateX(-100%)
     }
@@ -208,4 +208,12 @@ input:-moz-placeholder {
     right: 30 * $px;
     color: rgba(0, 0, 0, 0.67);
     font-size: $fs_60;
+}
+
+%clear {
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
 }
