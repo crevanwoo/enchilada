@@ -14,6 +14,7 @@
 }
 
 $px: 0.13vw;
+$fs_18: 18 * $px;
 $fs_22: 22 * $px;
 $fs_24: 24 * $px;
 $fs_30: 30 * $px;
@@ -151,6 +152,33 @@ input:-moz-placeholder {
     /* Firefox 18- */
     @include standart_font;
 }
+$textarea_height: 85 * $px;
+@mixin font_prod_comment {
+     font-family: Regular;
+    font-size: $fs_18;
+    color: $dark_grey;
+    line-height: $textarea_height - 40 * $px;
+}
+
+textarea::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    @include font_prod_comment;
+}
+
+textarea::-moz-placeholder {
+    /* Firefox 19+ */
+    @include font_prod_comment;
+}
+
+textarea:-ms-input-placeholder {
+    /* IE 10+ */
+    @include font_prod_comment;
+}
+
+textarea:-moz-placeholder {
+    /* Firefox 18- */
+    @include font_prod_comment;
+}
 
 
 /*animations*/
@@ -217,3 +245,4 @@ input:-moz-placeholder {
         clear: both;
     }
 }
+

@@ -1,6 +1,11 @@
 .filters {
-    height: 1100 * $px; //
+    height: 0;
+    overflow: hidden;
+    //min-height: 100vh;
+    opacity: 1;
     background-color: $light_beige;
+    z-index: 10;
+    transition-duration: 0s;
     .filters_header {
         padding-top: 85 * $px;
         text-transform: uppercase;
@@ -12,7 +17,7 @@
         font-size: $fs_30;
     }
     .filters_main {
-        padding: 0 30 * $px;
+        padding: 100 * $px 30 * $px 0 30 * $px;
         .sort_by_price,
         .sort_by_kcal {
             @extend %clear;
@@ -59,6 +64,7 @@
             line-height: $height;
             font-family: Medium;
             font-size: $fs_30;
+         
             &.active:after {
                 content: '';
                 position: absolute;
@@ -106,9 +112,43 @@
             font-size: 26 * $px;
         }
     }
+    .filters_ingridients {
+        .filters_title {
+            &:before,
+            &:after {
+                display: block;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 60 * $px;
+            }
+            &:before {
+                content: '-';
+                left: 40 * $px
+            }
+            &:after {
+                content: '+';
+                right: 40 * $px
+            }
+        }
+    }
     .filters_ingridients,
     .filters_allergens {
-        $height: 110 * $px;
+        $height: 110 * $px;        
+        height: 100vh;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        width: 100%;
+        transition: 0.5s;
+        background-color: $light_beige;
+        padding-top: 100 * $px;
+        z-index: 2;
+        overflow: auto;
+        box-sizing: border-box;
+        * {
+            box-sizing: border-box;
+        }
         .filters_header {
             padding-right: 30 * $px;
             padding-left: 30 * $px;
@@ -118,6 +158,7 @@
             text-align: center;
             line-height: $height;
             .filters_title {
+                position: relative;
                 height: $height;
                 text-transform: uppercase;
                 background-color: #ddcaac;
@@ -131,34 +172,53 @@
                     margin: auto;
                 }
             }
-            ul li {
-                position: relative;
-                height: $height;
-                line-height: $height;
-                border-bottom: 2 * $px solid $deep_beige;
-                font-size: $fs_30;
+            ul {
+                overflow: hidden;
+                li {
+                    position: relative;
+                    height: $height;
+                    line-height: $height;
+                    border-bottom: 2 * $px solid $deep_beige;
+                    font-size: $fs_30;
+                    box-sizing: border-box;
+                }
                 .filter_add,
                 .filter_remove {
                     position: absolute;
                     width: 30%;
                     height: 100%;
+                    opacity: 0;
+                    transition: 0.2s;
+                    &.active {
+                        opacity: 1;
+                        transition: 0.2s;
+                    }
                 }
                 .filter_add {
                     left: 0;
-                    background-image: linear-gradient(to right, rgba(211, 47, 47, 0.3) 0%, rgba(255, 255, 255, 0) 100%)
+                    opacity: 0;
+                    &.active {
+                        background-image: linear-gradient(to right, rgba(211, 47, 47, 0.3) 0%, rgba(255, 255, 255, 0) 100%)
+                    }
                 }
                 .filter_remove {
                     right: 0;
-                    background-image: linear-gradient(to left, rgba(61, 175, 117, 0.3) 0%, rgba(255, 255, 255, 0) 100%)
+                    &.active {
+                        background-image: linear-gradient(to left, rgba(61, 175, 117, 0.3) 0%, rgba(255, 255, 255, 0) 100%)
+                    }
                 }
                 .filter_delete {
                     position: absolute;
                     width: 100%;
                     height: 100%;
+                    opacity: 0;
                     background: rgba(211, 47, 47, 0.3)
                 }
             }
         }
+    }
+    .empty {
+        height: 140 * $px;
     }
     .filters_footer {
         $height: 140 * $px;
@@ -166,7 +226,10 @@
         height: $height;
         position: fixed;
         bottom: 0;
+        left: 100%;
         width: 100%;
+        transition: 0.5s;
+        z-index:2;
         .filters_footer_back {
             position: relative;
             flex: 2;

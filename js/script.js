@@ -1,69 +1,141 @@
-// preloader select table page
-$('.select_table').css('height', $('.preloader_bg').height())
+/* !!! --- Preloader begins */
 
 
 
-$('.select_table_next').on('touchstart', function () {
-    $('.preloader').animate({
-        opacity: 0,
-    }, 300)
+/* !!! Showing/hiding preloader begins */
 
+
+/**
+ * скрытие прелоадера
+ */
+
+hidePreloader();
+showMenu();
+setProductHeight();
+$('header').css('display', 'block')
+
+
+
+
+
+
+
+
+function hidePreloader() {
+    $('.preloader_main').animate({
+            opacity: 0,
+        }, 2000) //300
     setTimeout(function () {
-        $('.preloader').css('display', 'none')
-    }, 300)
+            $('.preloader_main').css('display', 'none')
+        }, 2000) //300
+}
+
+/*$('.select_table_next').on('touchstart click', function () {
+    showMenu();
+    hidePreloader();
+    setProductHeight();
+    $('header').css('display', 'block')
+})*/
 
 
+
+
+/* Showing/hiding and calc sizing in preloader ends !!! */
+
+
+/* !!! Langs in preloader begins */
+var lang_img, lang_text;
+
+function changeLang(obj) {
+    lang_img = $(obj).find('img').attr('src');
+    lang_text = $(obj).find('span').text();
+    $('.lang_wrapper .lang').find('img').attr('src', lang_img);
+    $('.lang_wrapper .lang span').text(lang_text);
+}
+
+function hidePreloaderLangs() {
+    $('.pop_langs').css('opacity', '0');
+    setTimeout(function () {
+        $('.pop_langs').css('display', 'none')
+    }, 500)
+}
+
+function showPreloaderLangs() {
+    $('.pop_langs').css('display', 'block');
+    setTimeout(function () {
+        $('.pop_langs').css('opacity', '1')
+    }, 500)
+}
+
+
+/**
+ * открываем модальное окно языков в прелоадере
+ * @param {[[Type]]} '.lang_wrapper .lang').on('click' [[Description]]
+ * @param {[[Type]]} function (                        [[Description]]
+ */
+$('.lang_wrapper .lang').on('click', function () {
+    showPreloaderLangs();
 })
 
 
+/**
+ * скрываем модальное окно языков в прелоадере
+ * @param {[[Type]]} '.internal_lang_wrapper .lang').on('click' [[Description]]
+ * @param {[[Type]]} function (                                 [[Description]]
+ */
+$('.internal_lang_wrapper .lang').on('click', function () {
+    changeLang(this);
+    hidePreloaderLangs();
+})
+
+/* Langs in preloader ends !!! */
 
 
-$(document).ready(function () {
-    $('.slider').slick({
-        autoplay: true,
-        dots: true,
-        mobileFirst: true,
-        swipeToSlide: true,
 
-    });
-});
+/* Preloader ends !!! --- */
 
 
 
-///
-var cat_prod_width = $('.category_product').width();
-$('.category_product').css('height', $('.category_product').width())
-$(window).on('resize', function () {
-    $('.category_product').css('height', $('.category.active .category_product').width())
+/* !!! Menu begins */
+
+
+function hideMenu() {
+    setTimeout(function () {
+        $('section.menu').css('display', 'none')
+    }, 400)
+}
+
+function showMenu() {
+    $('section.menu').css('display', 'block')
+}
+
+
+
+
+var cat_prod_width;
+
+
+
+/**
+ * при скрытии прелоадера размер элементов - блюд вычисляется и ставится
+ */
+function setProductHeight() {
     cat_prod_width = $('.category.active .category_product').width();
+    $('.category_product').css('height', $('.category_product').width())
+}
+
+$(window).on('resize', function () {
+    // при изменении размеров окна размер элементов - блюд пересчитывается
+    $('.category_product').css('height', $('.category.active .category_product').width());
+    cat_prod_width = $('.category.active .category_product').width()
 })
 
 
-
-//
-
-
-
-$('.header_field').on('click', function () {
-    if ($(this).hasClass('active')) {
-        $(this).removeClass('active');
-        $(this).parent().find('.category_product').animate({
-            height: 0
-        })
-    } else {
-        $(this).addClass('active');
-        $(this).parent().find('.category_product').animate({
-            height: cat_prod_width
-        })
-    }
-})
-
-
-
-
-
-
-
+/**
+ * переключение между табами меню
+ * @param {[[Type]]} '.tab_1, .tab_2, .tab_3').on('click' [[Description]]
+ * @param {[[Type]]} function (                           [[Description]]
+ */
 $('.tab_1, .tab_2, .tab_3').on('click', function () {
     if (!$(this).hasClass('active')) {
         var prev = $(this).parent().find('>.active');
@@ -87,6 +159,25 @@ $('.tab_1, .tab_2, .tab_3').on('click', function () {
     }
 })
 
+
+//сворачивание категории продуктов при нажатии на заголовок
+$('.header_field').on('click', function () {
+    if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+        $(this).parent().find('.category_product').animate({
+            height: 0
+        })
+    } else {
+        $(this).addClass('active');
+        $(this).parent().find('.category_product').animate({
+            height: cat_prod_width
+        })
+    }
+})
+
+
+
+//при нажатии кнопки "заказать" на продукте меняется отображение его 
 
 var actual_product;
 
@@ -130,55 +221,29 @@ $('.cat_close').on('click', function () {
 })
 
 
-/*$('.cat_order').on('click', function () {
-    $(this).parent().addClass('active');
-    $(this).parent().find('.cat_calc').css('display', 'flex');
-    if ($(this).parent().find('.cat_veg')) {
-        $(this).parent().find('.cat_veg').attr('hidden', '')
-    }
-    $(this).parent().find('.cat_close').removeAttr('hidden');
-    $(this).attr('hidden', '');
-    $(this).find('.cat_amount').text('1');
-    /*создание объекта*/
-/*})
 
-
-
-$('.cat_close').on('click', function () {
-    $(this).parent().removeClass('active');
-    $(this).parent().find('.cat_calc').css('display', 'none');
-    if ($(this).parent().find('.cat_veg')) {
-        $(this).parent().find('.cat_veg').removeAttr('hidden')
-    }
-    $(this).parent().find('.cat_order').removeAttr('hidden');
-    $(this).attr('hidden', '');
-})*/
-
-/* работа минус плюс в товаре */
-
-
+// работа минус плюс в товаре 
 
 $('.cat_minus').on('click', function () {
     var amount_block = $(this).parent().find('.cat_amount');
-
     var amount_num = amount_block.text();
     if (+amount_num > 0) {
         amount_block.text(+amount_num - 1)
     } else close_product();
-
-
 })
 
 $('.cat_plus').on('click', function () {
     var amount_block = $(this).parent().find('.cat_amount');
     var amount_num = amount_block.text();
     amount_block.text(+amount_num + 1)
-
 })
 
 
 
-/*при открытии корзины, если количество в объекте = 0, то объект не выводить*/
+/* Menu ends !!! */
+
+
+/* ??? при открытии корзины, если количество в объекте = 0, то объект не выводить*/
 
 
 
@@ -188,7 +253,97 @@ $('.cat_plus').on('click', function () {
 
 
 
-//$('.full_cart').css('height', $(window).height() - $('header').innerHeight())
+/* !!! Cart begins */
+
+
+
+
+
+
+
+//open cart
+$('.footer_cart').on('click', function () {
+    $('.full_cart').animate({
+        height: $(window).height() - $('header').innerHeight(),
+    })
+    $('.full_cart_products').css('height', $(window).height() - $('header').innerHeight() - $('.full_cart_header').innerHeight() - $('.full_cart_payment').innerHeight() - $('.full_cart_footer').innerHeight())
+    productsTransfer(0);
+    fixingFooterOnTop();
+    hideMenu();
+})
+
+
+
+function fixingFooterOnTop() {
+    setTimeout(function () {
+        $('footer').css('top', -($('.footer_menu').innerHeight() - $('header').innerHeight()));
+        $('footer').css('bottom', 'auto')
+    }, 400)
+}
+
+function fixingFooterOnBottom() {
+    $('footer').css('top', 'auto');
+    $('footer').css('bottom', '0')
+}
+
+
+// choosing payment in cart
+$('.full_cart_payment >div').on('click', function () {
+    if (!$(this).hasClass('active')) {
+        $(this).parent().find('.active').removeClass('active');
+        $(this).addClass('active');
+    }
+})
+
+
+// products smooth slide when cart is opening
+function productsTransfer(n) {
+    var prod = document.querySelectorAll('.full_cart .full_cart_products .product');
+    setTimeout(function () {
+        if (n < prod.length) {
+            prod[n].style.left = "0";
+            productsTransfer(n + 1);
+        }
+    }, 200)
+}
+
+// delete product from cart 
+$('.full_cart_products .cart_product_close').on('click', function () {
+    $(this).parent().parent().animate({
+        opacity: 0,
+        height: 0,
+    })
+})
+
+
+// close cart
+$('.full_cart_close').on('click', function () {
+    fixingFooterOnBottom();
+    $('.full_cart').animate({
+        height: 0,
+    })
+    $('.full_cart .full_cart_products .product').css('left', '-100%');
+    showMenu();
+
+})
+
+
+//textarea_fill 
+$('.product_comment textarea').on('blur', function () {
+    checkTextarea(this)
+})
+
+function checkTextarea(obj) {
+    if ($(obj).attr('value') != 0) {
+        $(obj).parent().find('img').css('display', 'block');
+    } else {
+        $(obj).removeAttr('value');
+        $(obj).parent().find('img').css('display', 'none');
+    }
+}
+
+
+/* Cart ends !!! */
 
 
 
@@ -197,8 +352,16 @@ $('.cat_plus').on('click', function () {
 
 
 
-$('.scroll_block').css('height', $(window).height() - ($(window).width() * 0.13 * 1.3))
+/* !!! Single product modal window begins */
 
+
+
+//set height on custom scrolling container
+$('.scroll_block').css('height', $(window).height() - ($(window).width() * 0.13 * 1.3));
+
+
+
+//set height on runner of custom scrolling container
 $('.modal_trigger').on('click', function () {
     var full_list = $('.modal_single_product_ingr li').innerHeight() * $('.modal_single_product_ingr li:not(:empty)').length + parseInt($('.modal_single_product_ingr').css('padding-top'));
     var full_height = parseInt($('.modal_content.scroll_container').css('padding-top')) +
@@ -211,110 +374,293 @@ $('.modal_trigger').on('click', function () {
 })
 
 
-$('.footer_cart').on('click', function () {
-    $('.full_cart').animate({
-        height: $(window).height() - $('header').innerHeight(),
-    })
-    $('.full_cart_products').css('height', $(window).height() - $('header').innerHeight() - $('.full_cart_header').innerHeight() - $('.full_cart_payment').innerHeight() - $('.full_cart_footer').innerHeight())
-    productsTransfer(0);
-})
-
-$('.full_cart_close').on('click', function () {
-    $('.full_cart').animate({
-        height: 0,
-    })
-    $('.full_cart .full_cart_products .product').css('left', '-100%')
-})
-
-
-
-$('.full_cart_payment >div').on('click', function () {
-    if (!$(this).hasClass('active')) {
-        $(this).parent().find('.active').removeClass('active');
-        $(this).addClass('active');
-    }
-})
-
-
-function productsTransfer(n) {
-    var prod = document.querySelectorAll('.full_cart .full_cart_products .product');
+//show allergens modal window
+$('.single_page_allergen').on('click', function () {
+    $('.pop_allergens').css('display', 'block');
     setTimeout(function () {
-        if (n < prod.length) {
-            prod[n].style.left = "0";
-            productsTransfer(n + 1);
-        }
-    }, 200)
+        $('.pop_allergens').css('opacity', '1')
+    }, 500)
+})
+
+//hide allergens modal window
+$('.allerg_close').on('click', function () {
+    $('.pop_allergens').css('opacity', '0');
+    setTimeout(function () {
+        $('.pop_allergens').css('display', 'none')
+    }, 500)
+})
+
+
+/* Single product modal window ends !!! */
+
+
+
+
+
+/* !!! Filters begins */
+
+/* Set value of range in special field */
+
+$('.slider_price').parent().find('.total .total_num').text($('.slider_price').attr('value') + '.00')
+$('.slider_price').on('change', function () {
+    $(this).parent().find('.total .total_num').text($(this).attr('value') + '.00')
+})
+
+$('.slider_kcal').parent().find('.total .total_num').text($('.slider_kcal').attr('value'))
+$('.slider_kcal').on('change', function () {
+    $(this).parent().find('.total .total_num').text($(this).attr('value'))
+})
+
+
+
+$('.filter_button').on('click', showFilter);
+
+$('.filters_close').on('click', hideFilter);
+
+
+
+
+function showFilter() {
+    $('.filter_button').addClass('active');
+    $('.filters').animate({
+        height: $(window).innerHeight()
+    });
+    hideMenu();
+
+}
+
+
+
+function hideFilter() {
+    showMenu();
+    $('.filters').animate({
+        height: 0
+    }, 400);
+    setTimeout(function () {
+        $('.filter_button').removeClass('active');
+    }, 400)
+}
+
+
+
+
+$('.filter_button_ingr').on('click', function () {
+    slideFilterTo('.filters_ingridients');
+    $('.filters_ingridients').css('height', $('.filters_ingridients').innerHeight())
+
+})
+
+$('.filter_button_alerg').on('click', function () {
+    slideFilterTo('.filters_allergens');
+    $('.filters_allergens').css('height', $('.filters_allergens').innerHeight())
+})
+
+
+var filters_section_class;
+
+
+/**
+ * Slide ingridients and allergens to main screen
+ */
+function slideFilterTo(classname) {
+    filters_section_class = classname;
+    $(filters_section_class).css('left', '0');
+    $('.filters_footer').css('left', '0');
 }
 
 
 
 
 
+$('.filters_footer_back').on('click', slideFilterFrom)
 
-$('.full_cart_products .cart_product_close').on('click', function () {
-    $(this).parent().animate({
-        opacity: 0,
-        height: 0,
+/**
+ * Slide ingridients and allergens back
+ */
+
+function slideFilterFrom() {
+    $(filters_section_class).css('left', '100%');
+    $('.filters_footer').css('left', '100%');
+}
+
+
+
+
+$('.filters_title, .filters_toggle').on('click', function () {
+    toggleList(this)
+})
+
+/**
+ * Slide down and slide up list of ingridients and allergens
+ * @param {[[Type]]} obj [[Description]]
+ */
+
+function toggleList(obj) {
+    var li = $(obj).parent().find('li');
+    if ($(obj).parent().find('ul').hasClass('active')) {
+        $(obj).parent().find('ul').removeClass('active');
+        $(obj).parent().find('ul').animate({
+            height: 0,
+        })
+        $(obj).parent().find('.filters_toggle img').css('transform', 'rotate(180deg)');
+    } else {
+        $(obj).parent().find('ul').addClass('active');
+        $(obj).parent().find('ul').animate({
+            height: li.length * li.innerHeight(),
+        });
+        $(obj).parent().find('.filters_toggle img').css('transform', 'rotate(0deg)');
+    }
+}
+
+
+
+$('.filter_delete').on('click', function () {
+    toggleAllergens(this)
+})
+
+
+/**
+ * Add and remove allergens
+ * @param {[[Type]]} obj [[Description]]
+ */
+function toggleAllergens(obj) {
+    if ($(obj).hasClass('active')) {
+        $(obj).animate({
+            opacity: 0
+        })
+        $(obj).removeClass('active')
+    } else {
+        $(obj).animate({
+            opacity: 1
+        })
+        $(obj).addClass('active')
+    }
+}
+
+
+/* Filters ends !!! */
+
+
+/* !!! Header begins */
+
+
+
+
+/* Header ends !!! */
+
+
+/* !!! Sidebar begins */
+
+$('.menu_button').on('click', function () {
+    slideSidebarTo();
+    calcSidebarParagraphsHeight();
+    setHeightToParagraph(0);
+    setDefaultImg();
+    removeClassActiveFromLi()
+})
+
+function slideSidebarTo() {
+    $('.sidebar_wrapper').css('display', 'block');
+    $('.sidebar_wrapper .shim').animate({
+        opacity: 1
+    });
+    $('.sidebar_wrapper .sidebar').addClass('active');
+}
+
+$('.sidebar_wrapper .shim').on('click', slideSidebarFrom)
+
+function slideSidebarFrom() {
+    $('.sidebar_wrapper .sidebar').removeClass('active');
+    $('.sidebar_wrapper .shim').animate({
+        opacity: 0
+    });
+    setTimeout(function () {
+        $('.sidebar_wrapper').css('display', 'none')
+    }, 400)
+}
+
+
+
+/* Set parameters to default */
+
+function setHeightToParagraph(height) {
+    $('.sidebar ul li + p').css('height', height)
+}
+
+
+function setDefaultImg() { //put on sidebar open - work
+    $('.sidebar ul li.active.sidebar_clickable_1 img').attr('src', $('.sidebar ul li.active.sidebar_clickable_1 img').attr('data-img'));
+    $('.sidebar ul li.active.sidebar_clickable_2 img').attr('src', $('.sidebar ul li.active.sidebar_clickable_2 img').attr('data-img'));
+}
+
+
+function removeClassActiveFromLi() {
+    if ($('.sidebar ul li.active')) {
+        $('.sidebar ul li.active').removeClass('active')
+    }
+}
+
+
+/*calc p height*/
+
+var p_1_height, p_2_height;
+
+function calcSidebarParagraphsHeight() {
+    if (!p_1_height && !p_2_height) {
+        p_1_height = $('.sidebar_clickable_1 + p').innerHeight();
+        p_2_height = $('.sidebar_clickable_2 + p').innerHeight();
+    }
+}
+
+/* Toggle li */
+
+
+$('.sidebar_clickable_1, .sidebar_clickable_2').on('click', function () {
+    toggleSidebarList(this)
+})
+
+
+
+function toggleSidebarList(obj) {
+    if ($(obj).parent().find('.active')) {
+        if ($(obj).hasClass('active')) {
+            hideSidebarList();
+            removeClassActiveFromLi();
+            $(obj).find('img').attr('src', $(obj).find('img').attr('data-img'));
+        } else {
+            var img = $(obj).parent().find('.active img');
+            img.attr('src', img.attr('data-img'));
+            hideSidebarList();
+            removeClassActiveFromLi();
+            openLi(obj);
+        }
+    } else {
+        openLi(obj);
+    }
+}
+
+
+function openLi(obj) {
+    $(obj).addClass('active');
+    $(obj).find('img').attr('src', $(obj).find('img').attr('data-img-active'));
+    showSidebarList(obj)
+}
+
+function showSidebarList(obj) { //put when li opening but after detele and add active
+    if ($(obj).hasClass('sidebar_clickable_1'))
+        $('.sidebar ul li.active + p').animate({
+            height: p_1_height
+        })
+    else {
+        $('.sidebar ul li.active + p').animate({
+            height: p_2_height
+        })
+    }
+}
+
+
+function hideSidebarList() { //put when li closing
+    $('.sidebar ul li.active + p').animate({
+        height: 0
     })
-})
-
-
-$('.lang_wrapper .lang').on('click', function () {
-    $('.pop_langs').css('display', 'block');
-    setTimeout($('.pop_langs').css('opacity', '1'), 500)
-})
-
-
-$('.internal_lang_wrapper .lang').on('click', function () {
-    var img = $(this).find('img').attr('src');
-    var text = $(this).find('span').text();
-
-    $('.lang_wrapper .lang').find('img').attr('src', img);
-    $('.lang_wrapper .lang span').text(text);
-
-    $('.pop_langs').css('opacity', '0');
-    setTimeout($('.pop_langs').css('display', 'none'), 500)
-})
-
-
-$('.single_page_allergen').on('click', function () {
-    $('.pop_allergens').css('display', 'block');
-    setTimeout($('.pop_allergens').css('opacity', '1'), 500)
-})
-
-$('.allerg_close').on('click', function () {
-    $('.pop_allergens').css('opacity', '0');
-    setTimeout($('.pop_allergens').css('display', 'none'), 500)
-})
-
-
-
-
-
-
-
-
-$('.slider_price').jRange({
-    from: 10,
-    to: 100,
-    step: 1,
-    scale: [10, 100],
-    format: '%s',
-    width: "100%",
-    theme: "theme-red",
-    showLabels: false,
-
-
-});
-
-$('.slider_kcal').jRange({
-    from: 50,
-    to: 2000,
-    step: 50,
-    scale: [50, 2000],
-    format: '%s',
-    width: "100%",
-    theme: "theme-red",
-    showLabels: false,
-
-});
+}

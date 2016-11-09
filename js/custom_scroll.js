@@ -15,9 +15,9 @@
                     break
                 }
                 container = container.parentElement;
-
-
-
+            }
+            if (container.tagName == 'BODY') {
+                container = false
             }
         }
     }
@@ -150,13 +150,15 @@
 
         if ($('.scroll_container').height()) {
             defineScrollContainer(e);
+            if (container) {
 
-            if (e.type == "touchstart") {
-                x1 = e.touches[0].clientY;
-            } else if (e.type == "touchmove") {
-                x2 = e.touches[0].clientY;
-            } else if (e.type == "touchend") {
-                calcTouchDifference(e);
+                if (e.type == "touchstart") {
+                    x1 = e.touches[0].clientY;
+                } else if (e.type == "touchmove") {
+                    x2 = e.touches[0].clientY;
+                } else if (e.type == "touchend") {
+                    calcTouchDifference(e);
+                }
             }
         }
     }

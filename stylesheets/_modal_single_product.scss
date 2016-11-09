@@ -1,6 +1,7 @@
-#single_product {
+#single_product {  
     $top: 315 * $px;
     min-height: 100vh;
+    background-color: $light_beige;
     .modal_background {
         position: absolute;
         top: 0;

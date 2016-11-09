@@ -1,0 +1,176 @@
+.sidebar_wrapper {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 12;
+}
+
+.sidebar {
+    $padding: 135 * $px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    width: 620 * $px;
+    height: 100vh;
+    box-shadow: 3 * $px 0 10 * $px black;
+    background-color: $deep_beige;
+    transition: 0.4s;
+    &.active {
+        transform: translateX(0);
+    }
+    %img {
+        position: absolute;
+        left: 40 * $px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60 * $px;
+        height: auto;
+    }
+    header.sidebar_header {
+        height: 200 * $px;
+        padding: 38 * $px 25 * $px;
+        box-sizing: border-box;
+        >* {
+            position: relative;
+            padding-left: 160 * $px;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 125 * $px;
+            height: 125 * $px;
+            border-radius: 50%;
+        }
+        .sidebar_user {
+            .name {
+                display: inline-block;
+                margin-top: 40 * $px;
+                text-transform: uppercase;
+                font-family: Medium;
+                font-size: $fs_30;
+            }
+            .points {
+                line-height: 200%;
+                font-size: 18 * $px;
+            }
+        }
+        .sidebar_guest {
+            img {
+                opacity: 0.4
+            }
+            .register_text {
+                text-transform: uppercase;
+                line-height: 300%;
+                font-family: Medium;
+            }
+            .sign_in,
+            .sign_up {
+                $height: 50 * $px;
+                display: inline-block;
+                height: $height;
+                line-height: $height;
+                padding: 0 25 * $px;
+            }
+            .sign_in {
+                background-color: $deep_red;
+                color: white;
+            }
+            .sign_up {
+                background-color: #b7ac9b
+            }
+        }
+    }
+    .sidebar_time {
+        position: relative;
+        padding-left: $padding;
+        padding-top: 45 * $px;
+        padding-bottom: 45 * $px;
+        background-color: $deep_red;
+        color: white;
+        img {
+            @extend %img;
+        }
+        .time {
+            font-family: Medium;
+            font-size: $fs_36;
+        }
+        .text {
+            font-size: 18 * $px;
+        }
+    }
+    ul {
+        padding-top: 25 * $px;
+        li {
+            $height: 80 * $px;
+            position: relative;
+            min-height: $height;
+            line-height: $height;
+            padding-left: $padding;
+            img {
+                @extend %img;
+            }
+            &+p {
+                //height: 0;
+                overflow: hidden;
+                box-sizing: border-box;
+                padding: 0 45 * $px;
+                line-height: 150%;
+                font-size: 22 * $px;
+                transition: 0.5s;
+            }
+            &.active {
+                &+p {
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+}
+
+.shim {
+    background-color: $dark_shim;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    .sidebar_close {
+        @extend %pop_close_button;
+        color: $light_beige;
+    }
+}
+
+.sidebar_modal {
+    @extend %pop;
+    // opacity: 0;
+    overflow: auto;
+    .modal_content {
+        padding: 60 * $px;
+        text-align: center;
+        img {
+            max-height: 266 * $px;
+            max-width: 364 * $px;
+            margin: 50 * $px auto;
+        }
+        .sidebar_modal_header {
+            text-transform: uppercase;
+            font-family: Medium;
+            font-size: 40 * $px;
+            line-height: 200%;
+        }
+        p {
+            padding-bottom: 60 * $px;
+            line-height: 150%;
+        }
+    }
+    .modal_close {
+        @extend %pop_close_button;
+    }
+}

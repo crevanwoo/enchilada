@@ -1,10 +1,3 @@
-/*.slider,
-.search,
-.tabs,
-.category {
-    display: none !important
-}*/
-
 .full_cart {
     height: 0;
     position: relative;
@@ -73,21 +66,24 @@
                     position: absolute;
                     right: 35 * $px;
                     font-size: 30 * $px;
+                    color: white;
                 }
             }
         }
     }
     .full_cart_products {
-        background-color: white;
+        background-color: $deep_beige;
         overflow: auto;
         .product {
             $height: 150 * $px;
             position: relative;
             left: -100%;
-            height: $height;
-            border-bottom: 2 * $px solid $border_grey;
+            //border-bottom: 2 * $px solid $border_grey;
             transition: 0.5s;
             overflow: hidden;
+            .product_wrapper {
+                height: $height;
+            }
             img {
                 display: inline-block;
                 width: $height;
@@ -139,6 +135,41 @@
                 line-height: $height;
                 font-size: 40 * $px;
             }
+            .product_comment {
+                position: relative;
+                padding: 0 25 * $px 0 65 * $px;
+                background-color: $dark_beige;
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: -20 * $px;
+                    left: $height;
+                    border: 20 * $px solid rgba(255, 255, 255, 0);
+                    border-bottom: 20 * $px solid $dark_beige;
+                    border-left: 20 * $px solid $dark_beige;
+                }
+                textarea {
+                    @include font_prod_comment;
+                    width: 100%;
+                    height: $textarea_height;
+                    padding: 20 * $px 0;
+                    line-height: 100%;
+                    box-sizing: border-box;
+                    border: none;
+                    background-color: rgba(255, 255, 255, 0);
+                    resize: none;
+                }
+                img {
+                    display: none;
+                    position: absolute;
+                    width: 32 * $px;
+                    height: auto;
+                    right: 30 * $px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
         }
     }
     .full_cart_footer {
@@ -174,7 +205,6 @@
     @extend %pop;
     overflow: auto;
     text-align: center;
-    opacity: 1 !important; //
     .modal_content {
         position: absolute;
         left: 0;
@@ -216,9 +246,11 @@
 }
 
 .cart_gratitude {
-    height: 1100 * $px; //
+    min-height: 1200 * $px;
+    height: 100vh;
+    box-sizing: border-box;
     position: relative;
-    padding: 0 30 * $px;
+    padding: 120 * $px 30 * $px 0 30 * $px;
     .cart_gratitude_header {
         padding-top: 90 * $px;
         padding-bottom: 30 * $px;
@@ -231,10 +263,8 @@
         padding-bottom: 50 * $px;
     }
     .cart_gratitude_buttons {
-        height: 160 * $px;
         >* {
-            width: 340 * $px;
-            height: 100%;
+            height: 160 * $px;
             padding-top: 50 * $px;
             box-sizing: border-box;
             text-align: center;
@@ -246,14 +276,24 @@
                 font-size: 18 * $px;
             }
         }
+        .waiting_time,
+        .table_num {
+            width: 340 * $px;
+            margin-bottom: 25 *$px;
+        }
         .waiting_time {
             float: left;
             background-color: $light_green;
             border: 4 * $px solid $light_green;
             color: white;
         }
-        .order_id {
+        .table_num {
             float: right;
+            border: 4 * $px solid $light_green;
+        }
+        .order_id {
+            width: 100%;
+            clear: both;
             border: 4 * $px solid $light_green;
         }
     }
@@ -313,4 +353,10 @@
             font-size: $fs_30;
         }
     }
+}
+
+.header_gratitude {
+ 
+    display: block;
+    
 }

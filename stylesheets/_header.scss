@@ -1,0 +1,61 @@
+ header.main_header {
+     position: fixed;
+     height: 117 * $px;
+     width: 100%;
+     background: {
+         image: url(../images/pattern_biege_triangle.jpg);
+         repeat: repeat-x;
+         size: auto 100%;
+     }
+     z-index: 11;
+     display:none;
+     .header_line {
+         @extend %triangle_line;
+     }
+     .header_logo {
+         position: relative;
+         img {
+             @extend %header_logo;
+             top: 5 * $px;
+             width: 200 * $px;
+         }
+     }
+     .menu_button,
+     .filter_button {
+         position: absolute;
+         width: 110 * $px;
+     }
+     %before {
+         content: ' ';
+         position: absolute;
+         top: 40 * $px;
+         width: 50 * $px;
+         height: 35 * $px;
+         background: {
+             size: contain;
+             repeat: no-repeat;
+         }
+     }
+     .menu_button {
+         height: 100 * $px;
+         &:before {
+             @extend %before;
+             background-image: url(../images/menu.png);
+             left: 31 * $px;
+         }
+     }
+     .filter_button {
+         right: 0;
+         height: (100 + 17) * $px;
+         background-color: rgba(255, 255, 255, 0);
+         &.active {
+             background-color: $light_beige;
+             z-index: 1
+         }
+         &:before {
+             @extend %before;
+             background-image: url(../images/filter.png);
+             right: 31 * $px;
+         }
+     }
+ }

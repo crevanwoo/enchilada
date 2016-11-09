@@ -10,7 +10,7 @@ img {
     display: block;
 }
 
-input {
+input, textarea {
     @include standart_font;
     text-overflow: ellipsis;
     &:focus {
@@ -30,4 +30,13 @@ p {
 
 .clear {
     clear: both
+}
+
+a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+        text-decoration: none;
+    }
 }
