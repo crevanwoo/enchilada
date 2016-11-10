@@ -5,26 +5,33 @@
     <meta charset="utf-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-
     <link rel="stylesheet" href="stylesheets/style.css">
 
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
 
 
+
+
+    <script defer src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script defer type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script defer type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script defer type="text/javascript" src="slick/slick.min.js"></script>
     <script defer src="range/jquery.range.js"></script>
 
-    <script defer src="js/script.js"></script>
     <script defer src="js/external_scripts.js"></script>
 
-    <script defer src="js/custom_scroll.js"></script>
 
+    <script defer src="js/custom_scroll.js"></script>
     <script defer src="js/modal.js"></script>
     <script defer src="js/filters.js"></script>
 
-    <script defer type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script defer type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script defer type="text/javascript" src="slick/slick.min.js"></script>
+    <script defer src="js/script.js"></script>
+
+
+
+
 </head>
 
 <body>
@@ -33,7 +40,7 @@
 
     <div class="preloader preloader_main">
         <div class="preloader_header">
-            <img src="images/header_image.jpg" alt=" ">
+            <div class="preloader_header_bg"></div>
             <div class="preloader_line"></div>
             <div class="preloader_logo"><img src="images/logo.png" alt=" "></div>
         </div>
@@ -43,10 +50,7 @@
             </div>
             <div class="preloader_text">подождите
             </div>
-
         </div>
-
-
     </div>
 
 
@@ -54,7 +58,7 @@
 
     <!-- Header begins -->
     <header class="main_header">
-        <div class="menu_button"></div>
+        <div class="menu_button modal_trigger" data-modal-id="modal_full_sidebar"></div>
         <div class="filter_button modal_trigger" data-modal-id="modal_filters"></div>
         <div class="header_line"></div>
         <div class="header_logo"><img src="images/logo.png" alt=" "></div>
@@ -1840,84 +1844,81 @@
 
 
 
+<!-- sidebar begins -->
+<div class="sidebar_wrapper modal" id="modal_full_sidebar" hidden>
+    <div class="shim modal_close">
+        <div class="sidebar_close">&#x2716;</div>
+    </div>
+    <section class="sidebar">
+        <header class="sidebar_header">
+            <!-- Block for guest begins -->
+            <div class="sidebar_guest" hidden>
+                <img src="images/avatar.png" alt=" ">
 
-
-
-    <!-- sidebar begins -->
-    <div class="sidebar_wrapper">
-        <div class="shim">
-            <div class="sidebar_close">&#x2716;</div>
-        </div>
-        <section class="sidebar">
-            <header class="sidebar_header">
-                <!-- Block for guest begins -->
-                <div class="sidebar_guest" hidden>
-                    <img src="images/avatar.png" alt=" ">
-
-                    <span class="register_text">вы не авторизованы</span>
-                    <br>
-                    <div class="sign_in">Вход</div>
-                    <div class="sign_up">Регистрация</div>
-                    <div></div>
-                </div>
-                <!-- Block for guest ends -->
-
-                <!-- Block for user begins -->
-
-                <div class="sidebar_user">
-                    <img src="images/avatar.png" alt=" ">
-                    <span class="name">алладин ганеций</span>
-                    <br>
-                    <div class="points">у вас <span class="points_amount">10000</span> баллов</div>
-                </div>
-
-
-                <!-- Block for user ends -->
-            </header>
-
-
-
-
-            <div class="sidebar_time"><img src="images/sidebar_icon_0.png" alt=" ">
-                <span class="time">0:13:43</span>
+                <span class="register_text">вы не авторизованы</span>
                 <br>
-                <span class="text">Прошло времени с заказа</span></div>
+                <div class="sign_in">Вход</div>
+                <div class="sign_up">Регистрация</div>
+                <div></div>
+            </div>
+            <!-- Block for guest ends -->
 
-            <ul>
-                <li class="active sidebar_clickable_1"><img src="images/sidebar_icon_4_active.png" alt=" " data-img-active="images/sidebar_icon_4_active.png" data-img="images/sidebar_icon_4.png">Что такое баллы?
-                </li>
-                <p>Баллы, это очки вознаграждения, которые могут быть обменяны на скидочные купоны и использоваться при покупке любых товаров</p>
-                <li class="active sidebar_clickable_2"><img src="images/sidebar_icon_2_active.png" alt=" " data-img-active="images/sidebar_icon_2_active.png" data-img="images/sidebar_icon_2.png">Как накопить баллы
-                </li>
-                <p>Баллы, это очки вознаграждения, которые могут быть обменяны на скидочные купоны и использоваться при покупке любых товаров</p>
-                <li><img src="images/sidebar_icon_3.png" alt=" ">Специальные предложения</li>
-                <li class="modal_trigger" data-modal-id="modal_sidebar"><img src="images/sidebar_icon_1.png" alt=" ">О сайте</li>
-            </ul>
+            <!-- Block for user begins -->
 
-        </section>
+            <div class="sidebar_user">
+                <img src="images/avatar.png" alt=" ">
+                <span class="name">алладин ганеций</span>
+                <br>
+                <div class="points">у вас <span class="points_amount">10000</span> баллов</div>
+            </div>
+
+
+            <!-- Block for user ends -->
+        </header>
+
+
+
+
+        <div class="sidebar_time"><img src="images/sidebar_icon_0.png" alt=" ">
+            <span class="time">0:13:43</span>
+            <br>
+            <span class="text">Прошло времени с заказа</span></div>
+
+        <ul>
+            <li class="active sidebar_clickable_1"><img src="images/sidebar_icon_4_active.png" alt=" " data-img-active="images/sidebar_icon_4_active.png" data-img="images/sidebar_icon_4.png">Что такое баллы?
+            </li>
+            <p>Баллы, это очки вознаграждения, которые могут быть обменяны на скидочные купоны и использоваться при покупке любых товаров</p>
+            <li class="active sidebar_clickable_2"><img src="images/sidebar_icon_2_active.png" alt=" " data-img-active="images/sidebar_icon_2_active.png" data-img="images/sidebar_icon_2.png">Как накопить баллы
+            </li>
+            <p>Баллы, это очки вознаграждения, которые могут быть обменяны на скидочные купоны и использоваться при покупке любых товаров</p>
+            <li><img src="images/sidebar_icon_3.png" alt=" ">Специальные предложения</li>
+            <li class="modal_trigger" data-modal-id="modal_sidebar"><img src="images/sidebar_icon_1.png" alt=" ">О сайте</li>
+        </ul>
+
+    </section>
+
+</div>
+
+
+
+<div class="modal sidebar_modal" id="modal_sidebar" hidden>
+    <div class="modal_content">
+        <img src="images/logo.png" alt=" ">
+        <h1 class='sidebar_modal_header'>enchilada</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        <img src="images/crepla_logo.png" alt=" ">
+        <h1 class='sidebar_modal_header'>crepla</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        <img src="images/crepla_logo.png" alt=" ">
+        <h1 class='sidebar_modal_header'>crepla</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 
     </div>
 
+    <div class="modal_close">&#x2716;</div>
+</div>
 
-
-    <div class="modal sidebar_modal" id="modal_sidebar" hidden>
-        <div class="modal_content">
-            <img src="images/logo.png" alt=" ">
-            <h1 class='sidebar_modal_header'>enchilada</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            <img src="images/crepla_logo.png" alt=" ">
-            <h1 class='sidebar_modal_header'>crepla</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            <img src="images/crepla_logo.png" alt=" ">
-            <h1 class='sidebar_modal_header'>crepla</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-
-        </div>
-
-        <div class="modal_close">&#x2716;</div>
-    </div>
-
-    <!-- sidebar ends -->
+<!-- sidebar ends -->
 
 
 

@@ -238,9 +238,7 @@ a:link, a:visited, a:hover, a:active {
     width: 100%;
     min-height: 100vh;
     padding-top: 52vw;
-    background-image: url(../images/pattern_biege.jpg);
-    background-repeat: repeat-x;
-    background-size: auto 100%; }
+    background-color: #e4d4bb; }
     .preloader .preloader_bg .preloader_circle {
       padding-top: 60%; }
       .preloader .preloader_bg .preloader_circle img {
@@ -321,7 +319,7 @@ a:link, a:visited, a:hover, a:active {
         position: absolute;
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(45deg, rgba(255, 255, 255, 0) 20%, #f1e2cb 50%, rgba(255, 255, 255, 0) 80%);
+        background-image: linear-gradient(45deg, rgba(255, 255, 255, 0) 20%, rgba(241, 226, 203, 0.8) 50%, rgba(255, 255, 255, 0) 80%);
         animation-name: next_button_line;
         animation-duration: 4s;
         animation-iteration-count: infinite;
@@ -1214,6 +1212,8 @@ body.hidden {
   .filters .filters_ingridients .filters_title:after {
     content: '+';
     right: 5.2vw; }
+  .filters .filters_allergens .filter_item_name {
+    position: relative; }
   .filters .filters_ingridients,
   .filters .filters_allergens {
     height: 100vh;
@@ -1286,20 +1286,20 @@ body.hidden {
           opacity: 0; }
           .filters .filters_ingridients .filters_category ul .filter_add.active,
           .filters .filters_allergens .filters_category ul .filter_add.active {
-            background-image: linear-gradient(to right, rgba(211, 47, 47, 0.3) 0%, rgba(255, 255, 255, 0) 100%); }
+            background-image: linear-gradient(to right, rgba(211, 47, 47, 0.8) 0%, rgba(255, 255, 255, 0) 100%); }
         .filters .filters_ingridients .filters_category ul .filter_remove,
         .filters .filters_allergens .filters_category ul .filter_remove {
           right: 0; }
           .filters .filters_ingridients .filters_category ul .filter_remove.active,
           .filters .filters_allergens .filters_category ul .filter_remove.active {
-            background-image: linear-gradient(to left, rgba(61, 175, 117, 0.3) 0%, rgba(255, 255, 255, 0) 100%); }
+            background-image: linear-gradient(to left, rgba(61, 175, 117, 0.8) 0%, rgba(255, 255, 255, 0) 100%); }
         .filters .filters_ingridients .filters_category ul .filter_delete,
         .filters .filters_allergens .filters_category ul .filter_delete {
           position: absolute;
           width: 100%;
           height: 100%;
           opacity: 0;
-          background: rgba(211, 47, 47, 0.3); }
+          background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(211, 47, 47, 0.8) 50%, rgba(255, 255, 255, 0) 100%); }
   .filters .empty {
     height: 18.2vw; }
   .filters .filters_footer {
@@ -1535,10 +1535,6 @@ body.hidden {
   color: black; }
 
 .sidebar_wrapper {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100vh;
   z-index: 12; }

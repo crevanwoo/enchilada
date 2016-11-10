@@ -9,11 +9,8 @@
 
     <link rel="stylesheet" href="stylesheets/style.css">
 
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-
-    <script defer type="text/javascript" src="slick/slick.min.js"></script>
-    <script defer src="range/jquery.range.js"></script>
 
     <script defer src="js/script.js"></script>
 
@@ -34,7 +31,7 @@
 
 
     <header class="header_gratitude main_header">
-        <div class="menu_button"></div>
+        <div class="menu_button modal_trigger" data-modal-id="modal_full_sidebar"></div>
         <div class="header_line"></div>
         <div class="header_logo"><img src="images/logo.png" alt=" "></div>
 
@@ -82,9 +79,10 @@
 
 
 
+
     <!-- sidebar begins -->
-    <div class="sidebar_wrapper">
-        <div class="shim">
+    <div class="sidebar_wrapper modal" id="modal_full_sidebar" hidden>
+        <div class="shim modal_close">
             <div class="sidebar_close">&#x2716;</div>
         </div>
         <section class="sidebar">

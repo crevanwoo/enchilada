@@ -9,25 +9,26 @@
  * скрытие прелоадера
  */
 
-hidePreloader();
-showMenu();
-setProductHeight();
-$('header').css('display', 'block')
 
+showFirstStage();
 
+function showFirstStage() {
+    hidePreloader();
+    showMenu();
+    setProductHeight();
+    $('header').css('display', 'block')
 
-
-
+}
 
 
 
 function hidePreloader() {
     $('.preloader_main').animate({
-            opacity: 0,
-        }, 2000) //300
+        opacity: 0,
+    }, 300)
     setTimeout(function () {
-            $('.preloader_main').css('display', 'none')
-        }, 2000) //300
+        $('.preloader_main').css('display', 'none')
+    }, 300)
 }
 
 /*$('.select_table_next').on('touchstart click', function () {
@@ -438,7 +439,8 @@ function hideFilter() {
     }, 400);
     setTimeout(function () {
         $('.filter_button').removeClass('active');
-    }, 400)
+    }, 400);
+    $('body').removeClass('hidden')
 }
 
 
@@ -514,7 +516,7 @@ function toggleList(obj) {
 
 
 
-$('.filter_delete').on('click', function () {
+$('.filters_allergens .filter_item_name').on('click', function () {
     toggleAllergens(this)
 })
 
@@ -524,16 +526,16 @@ $('.filter_delete').on('click', function () {
  * @param {[[Type]]} obj [[Description]]
  */
 function toggleAllergens(obj) {
-    if ($(obj).hasClass('active')) {
-        $(obj).animate({
+    if ($(obj).parent().find('.filter_delete').hasClass('active')) {
+        $(obj).parent().find('.filter_delete').animate({
             opacity: 0
         })
-        $(obj).removeClass('active')
+        $(obj).parent().find('.filter_delete').removeClass('active')
     } else {
-        $(obj).animate({
+        $(obj).parent().find('.filter_delete').animate({
             opacity: 1
         })
-        $(obj).addClass('active')
+        $(obj).parent().find('.filter_delete').addClass('active')
     }
 }
 
@@ -541,12 +543,7 @@ function toggleAllergens(obj) {
 /* Filters ends !!! */
 
 
-/* !!! Header begins */
 
-
-
-
-/* Header ends !!! */
 
 
 /* !!! Sidebar begins */
@@ -560,7 +557,7 @@ $('.menu_button').on('click', function () {
 })
 
 function slideSidebarTo() {
-    $('.sidebar_wrapper').css('display', 'block');
+    // $('.sidebar_wrapper').css('display', 'block');
     $('.sidebar_wrapper .shim').animate({
         opacity: 1
     });
@@ -575,7 +572,7 @@ function slideSidebarFrom() {
         opacity: 0
     });
     setTimeout(function () {
-        $('.sidebar_wrapper').css('display', 'none')
+        // $('.sidebar_wrapper').css('display', 'none')
     }, 400)
 }
 
@@ -664,3 +661,117 @@ function hideSidebarList() { //put when li closing
         height: 0
     })
 }
+
+
+
+/* Sidebar ends !!! */
+
+
+
+/* !!! Header begins */
+var header_state = true,
+    scroll_direction;
+
+$(window).on('scroll', function (e) {
+    calcScrollDirection();
+    /* if (window.pageYOffset > $('.main_header').innerHeight() && !header_down) {
+         headerSlideUp();
+         var header_down = true;  
+          header_state = false;
+     } else */
+    if (scroll_direction == 'to bottom' && header_state) {
+        headerSlideUp();
+        header_state = false;
+    } else if (scroll_direction == 'to top' && !header_state) {
+        headerSlideDown();
+        header_state = true;
+    }
+})
+
+var coord_1 = window.pageYOffset,
+    coord_2 = 1;
+
+function calcScrollDirection() {
+    coord_2 = window.pageYOffset;
+    if (coord_2 > coord_1) {
+        console.log('1' + ' ' + coord_2 + ' ' + coord_1);
+        scroll_direction = 'to bottom';
+        coord_1 = coord_2
+    } else if (coord_2 < coord_1) {
+        console.log('2' + ' ' + coord_2 + ' ' + coord_1);
+        scroll_direction = 'to top';
+        coord_1 = coord_2
+    } else if (coord_2 = coord_1) {
+        console.log('something wrong' + ' ' + coord_2 + ' ' + coord_1)
+    }
+
+
+}
+
+
+
+var header_full_height = $('.main_header').innerHeight() + $('.main_header .header_logo img').innerHeight() / 2;
+
+function headerSlideUp() {
+    $('.main_header').animate({
+        top: -header_full_height,
+
+    })
+}
+
+
+
+function headerSlideDown() {
+    $('.main_header').animate({
+        top: 0,
+
+    })
+
+
+}
+
+
+
+
+
+
+
+
+/* Header ends !!! */
+
+
+
+/* !!! Range relativity begins */
+$('input.slider_price').each(function () {
+    setRightRange(this)
+
+})
+$('input.slider_kcal').each(function () {
+    setRightRange(this)
+
+})
+
+function setRightRange(obj) {
+    var value = +$(obj).attr('value');
+    var active_bar = $(obj).parent().find('.selected-bar');
+
+    var min_value = +active_bar.parent().parent().find('.scale span:first-of-type ins').text();
+    var max_value = +active_bar.parent().parent().find('.scale span:last-of-type ins').text();
+    var pointer = active_bar.parent().find('.pointer.high');
+    var length = max_value - min_value;
+    var offset = ((100 * value) / length) + '%';
+    active_bar.width(offset);
+    pointer.css('left', offset)
+
+
+
+}
+
+
+
+
+
+
+
+
+/* Range relativity ends !!! */
