@@ -1,5 +1,277 @@
+@font-face {
+  font-family: Light;
+  src: url(../fonts/GothamProLight.ttf); }
+@font-face {
+  font-family: Regular;
+  src: url(../fonts/GothamProRegular.ttf); }
+@font-face {
+  font-family: Medium;
+  src: url(../fonts/GothamProMedium.ttf); }
+/* --- Font Sizes --- */
+/* --- Blocks Sizes --- */
+/* --- Colors --- */
+/* --- Features --- */
+/* --- Classes --- */
+.content section.order .info .manage_info:after, .content section.order .info .order_info:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.content section.order .info .manage_info .payment_info.cash:after, .content section.order .info .manage_info .payment_info.card:after, .content section.order .info .manage_info .time_info:after, .content section.order .comment .date:after {
+  content: '';
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center; }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f1e2cc;
+  font-family: Regular;
+  height: 100%; }
+
+* {
+  box-sizing: border-box; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0; }
+
 .wrapper {
   margin: auto;
   width: 1200px; }
+
+header {
+  height: 120px;
+  min-width: 1200px;
+  background-image: url(../images/triangle_line.jpg);
+  background-repeat: repeat-x;
+  background-size: auto 17px;
+  background-position: top; }
+  header .logo {
+    width: auto;
+    height: 110px;
+    margin-right: 20px;
+    padding-top: 5px;
+    float: left; }
+  header .main_h {
+    display: inline-block;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    text-transform: uppercase;
+    font-family: Medium;
+    font-size: 18px; }
+  header .user {
+    padding-top: 55px;
+    float: right; }
+    header .user .user_icon,
+    header .user .user_exit {
+      width: 25px;
+      height: auto; }
+    header .user .user_name {
+      position: relative;
+      top: -5px;
+      display: inline-block;
+      padding: 0 10px;
+      font-size: 16px; }
+
+main {
+  height: calc(100% - 120px);
+  padding-bottom: 55px; }
+  main .wrapper {
+    background-color: white;
+    height: 100%;
+    -webkit-box-shadow: 0px 4px 20px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 4px 20px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 4px 20px -3px rgba(0, 0, 0, 0.75); }
+  main .content_header {
+    height: 65px;
+    border-bottom: 1px solid #d3d3d3; }
+    main .content_header .tab, main .content_header .orders_amount {
+      height: 100%;
+      padding: 0 30px;
+      line-height: 65px;
+      font-size: 14px; }
+    main .content_header .tab {
+      float: left; }
+      main .content_header .tab.active {
+        background-color: #ae2629;
+        color: white;
+        font-family: Medium;
+        font-size: 16px; }
+    main .content_header .orders_amount {
+      float: right; }
+      main .content_header .orders_amount span {
+        font-family: Medium; }
+
+.scroll_block {
+  position: absolute;
+  height: 95%;
+  width: 4px;
+  top: 6px;
+  right: 6px;
+  background-color: #d3d3d3; }
+
+.scroll_runner {
+  position: relative;
+  top: 0;
+  /*custom*/
+  background-color: #ae2629; }
+
+.scroll_container,
+.scroll_runner {
+  /*scroll speed*/
+  transition: 0.5s; }
+
+.content {
+  position: relative;
+  height: calc(100% - 65px);
+  overflow: hidden; }
+  .content section.order > * {
+    padding: 20px; }
+  .content section.order .info .manage_info {
+    padding-bottom: 20px; }
+    .content section.order .info .manage_info .general_info {
+      float: left;
+      padding-right: 20px; }
+      .content section.order .info .manage_info .general_info .table_num {
+        font-family: Medium;
+        font-size: 24px; }
+      .content section.order .info .manage_info .general_info .order_id {
+        font-size: 16px; }
+    .content section.order .info .manage_info .payment_info {
+      position: relative;
+      float: left;
+      padding: 10px 60px 10px 10px;
+      border-radius: 10px;
+      border: 1px solid #d3d3d3; }
+      .content section.order .info .manage_info .payment_info > * {
+        display: inline-block; }
+      .content section.order .info .manage_info .payment_info .price {
+        padding: 0 10px;
+        font-family: Medium;
+        font-size: 24px; }
+      .content section.order .info .manage_info .payment_info .payment_status {
+        position: relative;
+        top: -3px;
+        font-size: 16px; }
+      .content section.order .info .manage_info .payment_info.cash:after, .content section.order .info .manage_info .payment_info.card:after, .content section.order .info .manage_info .payment_info.done:after {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%); }
+      .content section.order .info .manage_info .payment_info.cash:after {
+        width: 23px;
+        height: 22px;
+        background-image: url(../images/icon_cash.png); }
+      .content section.order .info .manage_info .payment_info.done {
+        border: none;
+        background-color: #3daf75;
+        color: white; }
+        .content section.order .info .manage_info .payment_info.done:after {
+          content: '\2713';
+          font-size: 24px;
+          color: #f1e2cc; }
+    .content section.order .info .manage_info .time_info {
+      position: relative;
+      float: right;
+      margin-right: 20px; }
+      .content section.order .info .manage_info .time_info > div > * {
+        padding-right: 45px;
+        text-align: right; }
+      .content section.order .info .manage_info .time_info > div .time {
+        font-family: Medium;
+        font-size: 24px; }
+      .content section.order .info .manage_info .time_info > div .time_comment {
+        position: relative;
+        top: -17px;
+        font-size: 14px; }
+      .content section.order .info .manage_info .time_info:after {
+        position: absolute;
+        top: 2px;
+        right: 0;
+        width: 39px;
+        height: 41px;
+        background-image: url(../images/icon_big_clock.png); }
+    .content section.order .info .manage_info .close_order_button {
+      float: right;
+      padding: 15px;
+      border-radius: 10px;
+      background-color: #ae2629;
+      color: #f1e2cc;
+      font-size: 16px; }
+  .content section.order .info .order_info {
+    margin: -5px; }
+    .content section.order .info .order_info .single_order {
+      float: left;
+      width: 282.5px;
+      height: 75px;
+      margin: 10px 5px;
+      padding: 15px;
+      border: 1px solid #d3d3d3;
+      border-radius: 10px;
+      font-family: Medium; }
+      .content section.order .info .order_info .single_order .product_name {
+        display: inline-block;
+        width: 80%;
+        line-height: 130%;
+        font-size: 16px; }
+      .content section.order .info .order_info .single_order .product_amount {
+        float: right;
+        display: block;
+        width: 30px;
+        height: 100%;
+        text-align: center;
+        line-height: 250%;
+        font-size: 16px; }
+      .content section.order .info .order_info .single_order.active {
+        position: relative;
+        border: none;
+        background-color: #3daf75;
+        color: white; }
+        .content section.order .info .order_info .single_order.active:after {
+          content: '\2713';
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          transform: translateY(-50%);
+          font-size: 24px;
+          color: #f1e2cc; }
+        .content section.order .info .order_info .single_order.active .product_amount {
+          display: none; }
+  .content section.order .comment {
+    position: relative;
+    background-color: #ffcaa3; }
+    .content section.order .comment:before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      border: 20px solid rgba(255, 255, 255, 0);
+      border-bottom: 20px solid #ffcaa3;
+      border-left: 20px solid #ffcaa3; }
+    .content section.order .comment .text {
+      width: 90%;
+      font-size: 14px; }
+    .content section.order .comment .date {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-right: 35px;
+      font-size: 14px; }
+      .content section.order .comment .date:after {
+        position: absolute;
+        right: 0;
+        top: -25%;
+        width: 25px;
+        height: 25px;
+        background-image: url(../images/icon_clock.png); }
 
 /*# sourceMappingURL=style_admin.css.map */

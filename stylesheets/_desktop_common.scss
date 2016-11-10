@@ -1,0 +1,133 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $bg_color;
+    font-family: Regular;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+.wrapper {
+    margin: auto;
+    width: 1200px;
+}
+
+header {
+    height: $header_height;
+    min-width: 1200px;
+    background-image: url(../images/triangle_line.jpg);
+    background-repeat: repeat-x;
+    background-size: auto 17px;
+    background-position: top;
+    .logo {
+        width: auto;
+        height: $header_height - 10px;
+        margin-right: 20px;
+        padding-top: 5px;
+        float: left;
+    }
+    .main_h {
+        display: inline-block;
+        padding-top: $padding-vert + 5px;
+        padding-bottom: 40px;
+        text-transform: uppercase;
+        font-family: Medium;
+        font-size: $fs_18;
+    }
+    .user {
+        padding-top: $padding-vert;
+        float: right;
+        .user_icon,
+        .user_exit {
+            width: 25px;
+            height: auto;
+        }
+        .user_icon {}
+        .user_exit {}
+        .user_name {
+            position: relative;
+            top: -5px;
+            display: inline-block;
+            padding: 0 10px;
+            font-size: $fs_16
+        }
+    }
+}
+
+main {
+    height:calc(100% - #{$header_height});
+    padding-bottom: $padding-vert;
+    .wrapper {
+        background-color: white;
+        height: 100%;
+        -webkit-box-shadow: 0px 4px 20px -3px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 4px 20px -3px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 4px 20px -3px rgba(0, 0, 0, 0.75);
+    }
+    .content_header {
+        height: $content_header;
+        border-bottom: 1px solid $border_grey;
+        %header_elems {
+            height: 100%;
+            padding: 0 30px;
+            line-height: $content_header;
+            font-size: $fs_14;
+        }
+        .tab {
+            @extend %header_elems;
+            float: left;
+            &.active {
+                background-color: $main_red;
+                color: white;
+                font-family: Medium;
+                font-size: $fs_16;
+            }
+        }
+        .orders_amount {
+            @extend %header_elems;
+            float: right;
+            span {
+                font-family: Medium;
+            }
+        }
+    }
+}
+
+
+
+.scroll_block {
+    position: absolute;  
+    height: 95%;
+    width: 4px;
+    top: 6px;
+    right: 6px;
+    background-color: $border_grey;
+}
+
+.scroll_runner {
+    position: relative;
+    top: 0;
+    /*custom*/
+   // height: 30px;
+    background-color: $main_red;
+}
+
+.scroll_container,
+.scroll_runner {
+    /*scroll speed*/
+    transition: 0.5s;
+}

@@ -1,0 +1,63 @@
+@font-face {
+    font-family: Light;
+    src: url(../fonts/GothamProLight.ttf)
+}
+
+@font-face {
+    font-family: Regular;
+    src: url(../fonts/GothamProRegular.ttf)
+}
+
+@font-face {
+    font-family: Medium;
+    src: url(../fonts/GothamProMedium.ttf)
+}
+
+
+/* --- Font Sizes --- */
+
+$fs_14: 14px;
+$fs_16: 16px;
+$fs_18: 18px;
+$fs_24: 24px;
+
+/* --- Blocks Sizes --- */
+
+$header_height: 120px;
+$padding-vert: 55px;
+$padding: 20px;
+$margin: 10px;
+$content_header: 65px;
+
+/* --- Colors --- */
+
+$bg_color: #f1e2cc;
+$main_red: #ae2629;
+$main_green: #3daf75;
+$border_grey: #d3d3d3;
+$bg_grey: #232323;
+$comment_peach: #ffcaa3;
+
+/* --- Features --- */
+
+$border: 1px solid $border_grey;
+$bord_rad: 10px;
+
+/* --- Classes --- */
+
+%clear {
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+%icon_bg {
+    content: '';
+    background: {
+        repeat: no-repeat;
+        size: contain;
+        position: center;
+    }
+}

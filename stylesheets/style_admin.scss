@@ -1,4 +1,5 @@
-.wrapper {
-    margin: auto;
-    width: 1200px;
-}
+@import '_desktop_abstract';
+@import '_desktop_common';
+@import '_desktop_current';
+@import '_desktop_archive';
+@import '_desktop_statistic';

@@ -1,0 +1,199 @@
+.content {  
+    position: relative;
+    height:calc(100% - #{$content_header});
+    overflow: hidden;
+    section.order {
+        >* {
+            padding: $padding;
+        }
+        .info {
+            .manage_info {
+                @extend %clear;
+                padding-bottom: $padding;
+                .general_info {
+                    float: left;
+                    padding-right: $padding;
+                    .table_num {
+                        font-family: Medium;
+                        font-size: $fs_24;
+                    }
+                    .order_id {
+                        font-size: $fs_16;
+                    }
+                }
+                .payment_info {
+                    position: relative;
+                    float: left;
+                    padding: $margin $margin*6 $margin $margin;
+                    border-radius: $bord_rad;
+                    border: $border;
+                    >* {
+                        display: inline-block;
+                    }
+                    .price {
+                        padding: 0 $margin;
+                        font-family: Medium;
+                        font-size: $fs_24;
+                    }
+                    .payment_status {
+                        position: relative;
+                        top: -3px;
+                        font-size: $fs_16;
+                    }
+                    &.cash,
+                    &.card,
+                    &.done {
+                        &:after {
+                            position: absolute;
+                            right: 15px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                    }
+                    &.cash {
+                        &:after {
+                            @extend %icon_bg;
+                            width: 23px;
+                            height: 22px;
+                            background-image: url(../images/icon_cash.png);
+                        }
+                    }
+                    &.card {
+                        &:after {
+                            @extend %icon_bg;
+                        }
+                    }
+                    &.done {
+                        border: none;
+                        background-color: $main_green;
+                        color: white;
+                        &:after {
+                            content: '\2713';
+                            font-size: $fs_24;
+                            color: $bg_color;
+                        }
+                    }
+                }
+                .time_info {
+                    position: relative;
+                    float: right;
+                    margin-right: $padding;
+                    >div {
+                        >* {
+                            padding-right: 45px;
+                            text-align: right;
+                        }
+                        .time {
+                            font-family: Medium;
+                            font-size: $fs_24;
+                        }
+                        .time_comment {
+                            position: relative;
+                            top: -17px;
+                            font-size: $fs_14;
+                        }
+                    }
+                    &:after {
+                        @extend %icon_bg;
+                        position: absolute;
+                        top: 2px;
+                        right: 0;
+                        width: 39px;
+                        height: 41px;
+                        background-image: url(../images/icon_big_clock.png);
+                    }
+                }
+                .close_order_button {
+                    float: right;
+                    padding: $margin* 1.5;
+                    border-radius: $bord_rad;
+                    background-color: $main_red;
+                    color: $bg_color;
+                    font-size: $fs_16;
+                }
+            }
+            .order_info {
+                $height: 75px;
+                @extend %clear;
+                margin: -$margin/2;
+                .single_order {
+                    float: left;
+                    width: 282.5px;
+                    height: $height;
+                    margin: $margin $margin/2;
+                    padding: $margin * 1.5;
+                    border: $border;
+                    border-radius: $bord_rad;
+                    font-family: Medium;
+                    .product_name {
+                        display: inline-block;
+                        width: 80%;
+                        line-height: 130%;
+                        font-size: $fs_16;
+                    }
+                    .product_amount {
+                        float: right;
+                        display: block;
+                        width: 30px;
+                        height: 100%;
+                        text-align: center;
+                        line-height: 250%;
+                        font-size: $fs_16;
+                    }
+                    &.active {
+                        position: relative;
+                        border: none;
+                        background-color: $main_green;
+                        color: white;
+                        &:after {
+                            content: '\2713';
+                            position: absolute;
+                            top: 50%;
+                            right: 20px;
+                            transform: translateY(-50%);
+                            font-size: $fs_24;
+                            color: $bg_color;
+                        }
+                        .product_amount {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .comment {
+            position: relative;
+            background-color: $comment_peach;
+            &:before {
+                content: '';
+                position: absolute;
+                top: -20px;
+                border: 20px solid rgba(255, 255, 255, 0);
+                border-bottom: 20px solid $comment_peach;
+                border-left: 20px solid $comment_peach;
+            }
+            .text {
+                width: 90%;
+                font-size: $fs_14;
+            }
+            .date {
+                position: absolute;
+                top: 0;
+                right: $padding;
+                top: 50%;
+                transform: translateY(-50%);
+                padding-right: 35px;
+                font-size: $fs_14;
+                &:after {
+                    @extend %icon_bg;
+                    position: absolute;
+                    right: 0;
+                    top: -25%;
+                    width: 25px;
+                    height: 25px;
+                    background-image: url(../images/icon_clock.png);
+                }
+            }
+        }
+    }
+}

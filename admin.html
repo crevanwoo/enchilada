@@ -5,19 +5,239 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="stylesheets/style_admin.css">
+      
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script defer src="js/script_admin.js"></script>
+     <script defer src="js/custom_scroll_desktop.js"></script>
 
 </head>
 
 <body>
-   
-   
-    <div class="wrapper">
+    <header>
+        <div class="wrapper">
+            <img src="images/logo.png" alt=" " class="logo">
+            <h1 class="main_h">Панель управления заказами</h1>
+            <div class="user">
+                <img src="images/icon_user.png" alt=" " class="user_icon">
+                <span class="user_name">Кориолан Морозов</span>
+                <img src="images/icon_user_exit.png" alt=" " class="user_exit">
+            </div>
+
+
+
+        </div>
+
+    </header>
+
+    <main>
+        <div class="wrapper">
+
+            <div class="content_header">
+                <div class="tab tab_1 active">Текущие заказы</div>
+                <div class="tab tab_2">Архив заказов</div>
+                <div class="tab tab_3">Статистика столов</div>
+                <div class="orders_amount">Активных заказов: <span>15</span></div>
+
+
+            </div>
+            <div class="content scroll_container_wrapper">
+               
+               
+               <div class="tab_1_content scroll_container">
+                <!-- Single order begins -->
+                <section class="order">
+                    <div class="info">
+                        <div class="manage_info">
+                            <div class="general_info">
+                                <span class="table_num">16 <span>стол</span></span>
+                                <br>
+                                <span class="order_id">12314</span>
+                            </div>
+                            <div class="payment_info cash">
+                                <div class="price"><span>45</span>$</div>
+                                <div class="payment_status">Оплата наличными</div>
+                            </div>
+                            <div class="close_order_button">Закрыть заказ</div>
+                            <div class="time_info">
+                                <div>
+                                    <div class="time">00:15:45</div>
+                                    <br>
+                                    <span class="time_comment">Время ожидания</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="order_info">
+
+                            <!-- Single product begins -->
+                            <div class="single_order">
+                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                <div class="product_amount">25</div>
+                            </div>
+                            <!-- Single product ends -->
+
+                            <!-- Single product begins -->
+                            <div class="single_order active">
+                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                <div class="product_amount">25</div>
+                            </div>
+                            <!-- Single product ends -->
+
+                            <!-- Single product begins -->
+                            <div class="single_order">
+                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                <div class="product_amount">25</div>
+                            </div>
+                            <!-- Single product ends -->
+
+                            <!-- Single product begins -->
+                            <div class="single_order">
+                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                <div class="product_amount">25</div>
+                            </div>
+                            <!-- Single product ends -->
+
+
+                            <!-- Single product begins -->
+                            <div class="single_order">
+                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                <div class="product_amount">25</div>
+                            </div>
+                            <!-- Single product ends -->
+
+
+                            <!-- Single product begins -->
+                            <div class="single_order">
+                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                <div class="product_amount">25</div>
+                            </div>
+                            <!-- Single product ends -->
+
+
+                        </div>
+
+                    </div>
+                    <div class="comment">
+                        <div class="text">Хочу, чтобы зяблики были живыми и пели мне песни на заказ, как музыкальный автомат, а рябина чтобы корни пустила сквозь тарелку или в чем вы там это все подадите, и вообще выпустите меня пожалуйста</div>
+                        <div class="date">11.11.11 11:11</div>
+                    </div>
+
+
+
+                </section>
+                <!-- Single order ends -->
+
+
+
+
+                <!-- Single order begins -->
+                <section class="order">
+                    <div class="info">
+                        <div class="manage_info">
+                            <div class="general_info">
+                                <span class="table_num">16 <span>стол</span></span>
+                                <br>
+                                <span class="order_id">12314</span>
+                            </div>
+                            <div class="payment_info done">
+                                <div class="price"><span>150</span>$</div>
+                                <div class="payment_status">Заказ оплачен</div>
+                            </div>
+                            <div class="close_order_button">Закрыть заказ</div>
+                            <div class="time_info">
+                                <div>
+                                    <div class="time">00:15:45</div>
+                                    <br>
+                                    <span class="time_comment">Время ожидания</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="order_info">
+
+                            <!-- Single product begins -->
+                            <div class="single_order">
+                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                <div class="product_amount">25</div>
+                            </div>
+                            <!-- Single product ends -->
+
+                            <!-- Single product begins -->
+                            <div class="single_order active">
+                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                <div class="product_amount">25</div>
+                            </div>
+                            <!-- Single product ends -->
+
+                            <!-- Single product begins -->
+                            <div class="single_order">
+                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                <div class="product_amount">25</div>
+                            </div>
+                            <!-- Single product ends -->
+
+                            <!-- Single product begins -->
+                            <div class="single_order">
+                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                <div class="product_amount">25</div>
+                            </div>
+                            <!-- Single product ends -->
+
+
+                            <!-- Single product begins -->
+                            <div class="single_order">
+                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                <div class="product_amount">25</div>
+                            </div>
+                            <!-- Single product ends -->
+
+
+                            <!-- Single product begins -->
+                            <div class="single_order">
+                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                <div class="product_amount">25</div>
+                            </div>
+                            <!-- Single product ends -->
+
+
+                        </div>
+
+                    </div>
+                    <div class="comment">
+                        <div class="text">Хочу, чтобы зяблики были живыми и пели мне песни на заказ, как музыкальный автомат, а рябина чтобы корни пустила сквозь тарелку или в чем вы там это все подадите, и вообще выпустите меня пожалуйста</div>
+                        <div class="date">11.11.11 11:11</div>
+                    </div>
+
+
+
+                </section>
+                <!-- Single order ends -->
+                
+                
+     
+                </div>
+                
+                           <div class="scroll_block">
+            <div class="scroll_runner"></div>
+        </div>
+                
+                
+                
+                
         
-        
-        
-    </div>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </main>
 
 
 
