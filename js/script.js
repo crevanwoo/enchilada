@@ -585,6 +585,7 @@ function slideSidebarFrom() {
     $('.sidebar_wrapper .shim').animate({
         opacity: 0
     });
+    $('body').removeClass('hidden');
     setTimeout(function () {
         // $('.sidebar_wrapper').css('display', 'none')
     }, 400)
