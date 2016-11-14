@@ -1,0 +1,38 @@
+section.archive {
+    margin: $margin $padding $margin $margin;
+    padding: $padding;
+    border-radius: $bord_rad;
+    background-color: $bg_grey;
+    font-size: $fs_14;
+    .stat_header {
+        padding-bottom: $margin * 1.5;
+        font-family: Medium;
+    }
+    .stat_info {
+        @extend %clear;
+        padding-bottom: $padding;
+        .general_info {
+            float: left;
+            >span {
+                font-family: Medium;
+            }
+            .order_id {
+                padding-bottom: $margin;
+                font-family: Medium;
+                font-size: $fs_16;
+            }
+        }
+        .time_info {
+            float: right;
+            text-align: right;
+            font-family: Medium;
+            p {
+                padding-bottom: $margin;
+            }
+        }
+    }
+    .stat_order {
+        padding-bottom: $margin;
+    }
+    .stat_comment {}
+}

@@ -1,10 +1,17 @@
+html {
+    font-size: 1px;
+    @include media {
+        font-size: 0.8px;
+    }
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
+    height: 100%;
     background-color: $bg_color;
     font-family: Regular;
-    height: 100%;
 }
 
 * {
@@ -19,16 +26,19 @@ h5,
 h6,
 p {
     margin: 0;
+    font-size: $fs_14;
 }
 
 .wrapper {
     margin: auto;
     width: 1200px;
+    @include media {
+        width: 700px;
+    }
 }
 
 header {
     height: $header_height;
-    min-width: 1200px;
     background-image: url(../images/triangle_line.jpg);
     background-repeat: repeat-x;
     background-size: auto 17px;
@@ -49,7 +59,7 @@ header {
         font-size: $fs_18;
     }
     .user {
-        padding-top: $padding-vert;
+        padding-top: $padding-vert - 5px;
         float: right;
         .user_icon,
         .user_exit {
@@ -107,27 +117,63 @@ main {
     }
 }
 
-
-
-.scroll_block {
-    position: absolute;  
-    height: 95%;
-    width: 4px;
-    top: 6px;
-    right: 6px;
-    background-color: $border_grey;
+.content {
+    position: relative;
+    height:calc(100% - #{$content_header});
+   overflow: hidden;
+    //overflow: auto;
+    //&::-webkit-scrollbar              {background-color: green }
+    //&::-webkit-scrollbar-button {
+    //display: none;
+    //}
+    //&::-webkit-scrollbar-track        {background-color: orange}
+    //&::-webkit-scrollbar-track-piece {
+    //position: absolute !important;
+    //height: 95% !important;
+    //width: 4px !important;
+    //top: 6px !important;
+    //right: 6px !important;
+    //background-color: $border_grey !important;
+    //z-index: 1;
+    //}
+    //&::-webkit-scrollbar-thumb {
+    //background-color: $main_red;
+    //}
+    //&::-webkit-scrollbar-corner       { background-color: black }
+    //&::-webkit-resizer {background-color: deepskyblue}
+    //-ms-progress-appearance: green;
+    //-ms-scrollbar-3dlight-color: red;
+    //scrollbar-arrow-color: $main_red;
+    //scrollbar-base-color: black;
+    //-ms-scrollbar-darkshadow-color: blue;
+    //scrollbar-face-color: orange;
+    //scrollbar-highlight-color: green;
+    //-ms-scrollbar-shadow-color: $main_red;
+    //scrollbar-track-color: $main_red;
+}
+.tab_1_content, .tab_2_content, .tab_3_content { 
+    position: absolute;
+    height: 100%;
+    top:0;
+    left:0;
+    width:100%;
+    background-color: white;
 }
 
-.scroll_runner {
-    position: relative;
-    top: 0;
-    /*custom*/
-   // height: 30px;
+.scroll-bar {
+    position: absolute !important;
+    height: 95% !important;
+    width: 4px !important;
+    top: 6px !important;
+    right: 6px !important;
+    background-color: $border_grey !important;
+    z-index: 1;
+}
+
+.thumb {
     background-color: $main_red;
 }
 
-.scroll_container,
-.scroll_runner {
-    /*scroll speed*/
-    transition: 0.5s;
+.overview {
+    width: 100%;
 }

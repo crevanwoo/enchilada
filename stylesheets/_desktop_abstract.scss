@@ -16,10 +16,10 @@
 
 /* --- Font Sizes --- */
 
-$fs_14: 14px;
-$fs_16: 16px;
-$fs_18: 18px;
-$fs_24: 24px;
+$fs_14: 14rem;
+$fs_16: 16rem;
+$fs_18: 18rem;
+$fs_24: 24rem;
 
 /* --- Blocks Sizes --- */
 
@@ -35,7 +35,7 @@ $bg_color: #f1e2cc;
 $main_red: #ae2629;
 $main_green: #3daf75;
 $border_grey: #d3d3d3;
-$bg_grey: #232323;
+$bg_grey: #ebebeb;
 $comment_peach: #ffcaa3;
 
 /* --- Features --- */
@@ -59,5 +59,11 @@ $bord_rad: 10px;
         repeat: no-repeat;
         size: contain;
         position: center;
+    }
+}
+
+@mixin media {
+    @media screen and (max-width: 1200px) {
+        @content
     }
 }

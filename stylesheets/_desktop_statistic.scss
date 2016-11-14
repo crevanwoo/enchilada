@@ -1,0 +1,37 @@
+ .stat_wrapper {
+     @extend %clear;
+     margin: 0 $margin*1.5 0 $margin*0.5;
+     overflow: hidden
+ }
+ 
+ section.stat_table {
+     float: left;
+     position: relative;
+     width: 295px;
+     padding: $margin*1.5;
+     .general_info {
+         padding-bottom: $margin;
+         font-family: Medium;
+         font-size: $fs_18;
+         .proceeds {
+             float: right;
+         }
+     }
+     .order_amount {
+         padding-bottom: $margin;
+         font-size: $fs_16;
+     }
+     .time_borders {
+         line-height: 150%;
+         font-size: $fs_14;
+     }
+     &:before {
+         @extend %icon_bg;
+         position: absolute;
+         width: 100px;
+         height: 100px;
+         top: -51px;
+         left: -51px;
+         background-image: url(../images/border_cross.png);
+     }
+ }

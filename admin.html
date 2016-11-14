@@ -4,11 +4,14 @@
 <head>
     <meta charset="utf-8">
     <title></title>
+
+    <link rel="stylesheet" href="stylesheets/jquery.custom-scrollbar.css">
     <link rel="stylesheet" href="stylesheets/style_admin.css">
-      
+
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script defer src="js/script_admin.js"></script>
-     <script defer src="js/custom_scroll_desktop.js"></script>
+   
+    <script defer src="js/jquery.custom-scrollbar.min.js"></script>
+     <script defer src="js/script_admin.js"></script>
 
 </head>
 
@@ -33,203 +36,796 @@
         <div class="wrapper">
 
             <div class="content_header">
-                <div class="tab tab_1 active">Текущие заказы</div>
-                <div class="tab tab_2">Архив заказов</div>
-                <div class="tab tab_3">Статистика столов</div>
+                <div class="tab tab_1 active" data-tab="tab_1">Текущие заказы</div>
+                <div class="tab tab_2" data-tab="tab_2">Архив заказов</div>
+                <div class="tab tab_3" data-tab="tab_3">Статистика столов</div>
                 <div class="orders_amount">Активных заказов: <span>15</span></div>
 
 
             </div>
-            <div class="content scroll_container_wrapper">
-               
-               
-               <div class="tab_1_content scroll_container">
-                <!-- Single order begins -->
-                <section class="order">
-                    <div class="info">
-                        <div class="manage_info">
-                            <div class="general_info">
-                                <span class="table_num">16 <span>стол</span></span>
-                                <br>
-                                <span class="order_id">12314</span>
-                            </div>
-                            <div class="payment_info cash">
-                                <div class="price"><span>45</span>$</div>
-                                <div class="payment_status">Оплата наличными</div>
-                            </div>
-                            <div class="close_order_button">Закрыть заказ</div>
-                            <div class="time_info">
-                                <div>
-                                    <div class="time">00:15:45</div>
+            <div class="content">
+
+                <!-- Tab 1 begins -->
+                <div class="tab_1_content"  data-tab="tab_1" style="z-index: 10; position:relative">
+                    <!-- Single order begins -->
+                    <section class="order">
+                        <div class="info">
+                            <div class="manage_info">
+                                <div class="general_info">
+                                    <span class="table_num">16 <span>стол</span></span>
                                     <br>
-                                    <span class="time_comment">Время ожидания</span>
+                                    <span class="order_id">12314</span>
+                                </div>
+                                <div class="payment_info cash">
+                                    <div class="price"><span>45</span>$</div>
+                                    <div class="payment_status">Оплата наличными</div>
+                                </div>
+                                <div class="close_order_button">Закрыть заказ</div>
+                                <div class="time_info">
+                                    <div>
+                                        <div class="time">00:15:45</div>
+                                        <br>
+                                        <span class="time_comment">Время ожидания</span>
+                                    </div>
+
                                 </div>
 
                             </div>
+                            <div class="order_info">
+
+                                <!-- Single product begins -->
+                                <div class="single_order">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+                                <!-- Single product begins -->
+                                <div class="single_order active">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+                                <!-- Single product begins -->
+                                <div class="single_order">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+                                <!-- Single product begins -->
+                                <div class="single_order">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+
+                                <!-- Single product begins -->
+                                <div class="single_order">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+
+                                <!-- Single product begins -->
+                                <div class="single_order">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+
+                            </div>
 
                         </div>
-                        <div class="order_info">
-
-                            <!-- Single product begins -->
-                            <div class="single_order">
-                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
-                                <div class="product_amount">25</div>
-                            </div>
-                            <!-- Single product ends -->
-
-                            <!-- Single product begins -->
-                            <div class="single_order active">
-                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
-                                <div class="product_amount">25</div>
-                            </div>
-                            <!-- Single product ends -->
-
-                            <!-- Single product begins -->
-                            <div class="single_order">
-                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
-                                <div class="product_amount">25</div>
-                            </div>
-                            <!-- Single product ends -->
-
-                            <!-- Single product begins -->
-                            <div class="single_order">
-                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
-                                <div class="product_amount">25</div>
-                            </div>
-                            <!-- Single product ends -->
-
-
-                            <!-- Single product begins -->
-                            <div class="single_order">
-                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
-                                <div class="product_amount">25</div>
-                            </div>
-                            <!-- Single product ends -->
-
-
-                            <!-- Single product begins -->
-                            <div class="single_order">
-                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
-                                <div class="product_amount">25</div>
-                            </div>
-                            <!-- Single product ends -->
-
-
+                        <div class="comment">
+                            <div class="text">Хочу, чтобы зяблики были живыми и пели мне песни на заказ, как музыкальный автомат, а рябина чтобы корни пустила сквозь тарелку или в чем вы там это все подадите, и вообще выпустите меня пожалуйста</div>
+                            <div class="date">11.11.11 11:11</div>
                         </div>
 
-                    </div>
-                    <div class="comment">
-                        <div class="text">Хочу, чтобы зяблики были живыми и пели мне песни на заказ, как музыкальный автомат, а рябина чтобы корни пустила сквозь тарелку или в чем вы там это все подадите, и вообще выпустите меня пожалуйста</div>
-                        <div class="date">11.11.11 11:11</div>
-                    </div>
 
 
-
-                </section>
-                <!-- Single order ends -->
+                    </section>
+                    <!-- Single order ends -->
 
 
 
 
-                <!-- Single order begins -->
-                <section class="order">
-                    <div class="info">
-                        <div class="manage_info">
-                            <div class="general_info">
-                                <span class="table_num">16 <span>стол</span></span>
-                                <br>
-                                <span class="order_id">12314</span>
-                            </div>
-                            <div class="payment_info done">
-                                <div class="price"><span>150</span>$</div>
-                                <div class="payment_status">Заказ оплачен</div>
-                            </div>
-                            <div class="close_order_button">Закрыть заказ</div>
-                            <div class="time_info">
-                                <div>
-                                    <div class="time">00:15:45</div>
+                    <!-- Single order begins -->
+                    <section class="order">
+                        <div class="info">
+                            <div class="manage_info">
+                                <div class="general_info">
+                                    <span class="table_num">16 <span>стол</span></span>
                                     <br>
-                                    <span class="time_comment">Время ожидания</span>
+                                    <span class="order_id">12314</span>
+                                </div>
+                                <div class="payment_info done">
+                                    <div class="price"><span>150</span>$</div>
+                                    <div class="payment_status">Заказ оплачен</div>
+                                </div>
+                                <div class="close_order_button">Закрыть заказ</div>
+                                <div class="time_info">
+                                    <div>
+                                        <div class="time">00:15:45</div>
+                                        <br>
+                                        <span class="time_comment">Время ожидания</span>
+                                    </div>
+
                                 </div>
 
                             </div>
+                            <div class="order_info">
+
+                                <!-- Single product begins -->
+                                <div class="single_order">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+                                <!-- Single product begins -->
+                                <div class="single_order active">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+                                <!-- Single product begins -->
+                                <div class="single_order">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+                                <!-- Single product begins -->
+                                <div class="single_order">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+
+                                <!-- Single product begins -->
+                                <div class="single_order">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+
+                                <!-- Single product begins -->
+                                <div class="single_order">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+
+                            </div>
 
                         </div>
-                        <div class="order_info">
-
-                            <!-- Single product begins -->
-                            <div class="single_order">
-                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
-                                <div class="product_amount">25</div>
-                            </div>
-                            <!-- Single product ends -->
-
-                            <!-- Single product begins -->
-                            <div class="single_order active">
-                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
-                                <div class="product_amount">25</div>
-                            </div>
-                            <!-- Single product ends -->
-
-                            <!-- Single product begins -->
-                            <div class="single_order">
-                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
-                                <div class="product_amount">25</div>
-                            </div>
-                            <!-- Single product ends -->
-
-                            <!-- Single product begins -->
-                            <div class="single_order">
-                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
-                                <div class="product_amount">25</div>
-                            </div>
-                            <!-- Single product ends -->
-
-
-                            <!-- Single product begins -->
-                            <div class="single_order">
-                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
-                                <div class="product_amount">25</div>
-                            </div>
-                            <!-- Single product ends -->
-
-
-                            <!-- Single product begins -->
-                            <div class="single_order">
-                                <span class="product_name">Пирог грибной с зябликами и рябиной</span>
-                                <div class="product_amount">25</div>
-                            </div>
-                            <!-- Single product ends -->
-
-
+                        <div class="comment">
+                            <div class="text">Хочу, чтобы зяблики были живыми и пели мне песни на заказ, как музыкальный автомат, а рябина чтобы корни пустила сквозь тарелку или в чем вы там это все подадите, и вообще выпустите меня пожалуйста</div>
+                            <div class="date">11.11.11 11:11</div>
                         </div>
 
-                    </div>
-                    <div class="comment">
-                        <div class="text">Хочу, чтобы зяблики были живыми и пели мне песни на заказ, как музыкальный автомат, а рябина чтобы корни пустила сквозь тарелку или в чем вы там это все подадите, и вообще выпустите меня пожалуйста</div>
-                        <div class="date">11.11.11 11:11</div>
-                    </div>
+
+
+                    </section>
+                    <!-- Single order ends -->
 
 
 
-                </section>
-                <!-- Single order ends -->
-                
-                
-     
+
+
+
+                    <!-- Single order begins -->
+                    <section class="order">
+                        <div class="info">
+                            <div class="manage_info">
+                                <div class="general_info">
+                                    <span class="table_num">16 <span>стол</span></span>
+                                    <br>
+                                    <span class="order_id">12314</span>
+                                </div>
+                                <div class="payment_info card">
+                                    <div class="price"><span>150</span>$</div>
+                                    <div class="payment_status">Оплата картой</div>
+                                </div>
+                                <div class="close_order_button">Закрыть заказ</div>
+                                <div class="time_info">
+                                    <div>
+                                        <div class="time">00:15:45</div>
+                                        <br>
+                                        <span class="time_comment">Время ожидания</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="order_info">
+
+                                <!-- Single product begins -->
+                                <div class="single_order">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+                                <!-- Single product begins -->
+                                <div class="single_order active">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+                                <!-- Single product begins -->
+                                <div class="single_order">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+                                <!-- Single product begins -->
+                                <div class="single_order">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+
+                                <!-- Single product begins -->
+                                <div class="single_order">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+
+                                <!-- Single product begins -->
+                                <div class="single_order">
+                                    <span class="product_name">Пирог грибной с зябликами и рябиной</span>
+                                    <div class="product_amount">25</div>
+                                </div>
+                                <!-- Single product ends -->
+
+
+                            </div>
+
+                        </div>
+                        <div class="comment">
+                            <div class="text">Хочу, чтобы зяблики были живыми и пели мне песни на заказ, как музыкальный автомат, а рябина чтобы корни пустила сквозь тарелку или в чем вы там это все подадите, и вообще выпустите меня пожалуйста</div>
+                            <div class="date">11.11.11 11:11</div>
+                        </div>
+
+
+
+                    </section>
+                    <!-- Single order ends -->
+
+
+
+
+
                 </div>
-                
-                           <div class="scroll_block">
-            <div class="scroll_runner"></div>
-        </div>
-                
-                
-                
-                
-        
 
 
 
+                <!-- Tab 1 ends -->
+
+                <!-- Tab 2 begins -->
+
+                <div class="tab_2_content" data-tab="tab_2">
+                    <!-- Single archive order begins -->
+                    <section class="archive">
+                        <div class="stat_info">
+                            <div class="general_info">
+                                <h3 class="order_id">Заказ: <span>123456</span></h3> Стол: <span>16</span> Цена: <span>45$</span>
+                            </div>
+                            <div class="time_info">
+                                <p>Открыт: <span>11.11.1111 11:11</span></p>
+                                Закрыт: <span>30.12.2000 20:20</span>
+                            </div>
+                        </div>
+                        <div class="stat_order">
+                            <h3 class="stat_header">Содержимое заказа</h3> Омлет по-казахски <span>(10 шт.)</span>, Токийская лапша <span>(7 шт.)</span>, Казахстанская пицца на кумысе <span>(10 шт.)</span>, Белгородская картошка-антошка <span>(10 шт.)</span>, Белорусский картофельный сок 1л <span>(10 шт.)</span>, Африканское мороженое <span>(10 шт.)</span></div>
+                        <div class="stat_comment">
+                            <h3 class="stat_header">Комментарий к заказу</h3> Хочу пиццу, а картошку не хочу</div>
+                    </section>
+                    <!-- Single archive order ends -->
+
+                    <!-- Single archive order begins -->
+                    <section class="archive">
+                        <div class="stat_info">
+                            <div class="general_info">
+                                <h3 class="order_id">Заказ: <span>123456</span></h3> Стол: <span>16</span> Цена: <span>45$</span>
+                            </div>
+                            <div class="time_info">
+                                <p>Открыт: <span>11.11.1111 11:11</span></p>
+                                Закрыт: <span>30.12.2000 20:20</span>
+                            </div>
+                        </div>
+                        <div class="stat_order">
+                            <h3 class="stat_header">Содержимое заказа</h3> Омлет по-казахски <span>(10 шт.)</span>, Токийская лапша <span>(7 шт.)</span>, Казахстанская пицца на кумысе <span>(10 шт.)</span>, Белгородская картошка-антошка <span>(10 шт.)</span>, Белорусский картофельный сок 1л <span>(10 шт.)</span>, Африканское мороженое <span>(10 шт.)</span></div>
+                        <div class="stat_comment">
+                            <h3 class="stat_header">Комментарий к заказу</h3> Хочу пиццу, а картошку не хочу</div>
+                    </section>
+                    <!-- Single archive order ends -->
+
+
+                    <!-- Single archive order begins -->
+                    <section class="archive">
+                        <div class="stat_info">
+                            <div class="general_info">
+                                <h3 class="order_id">Заказ: <span>123456</span></h3> Стол: <span>16</span> Цена: <span>45$</span>
+                            </div>
+                            <div class="time_info">
+                                <p>Открыт: <span>11.11.1111 11:11</span></p>
+                                Закрыт: <span>30.12.2000 20:20</span>
+                            </div>
+                        </div>
+                        <div class="stat_order">
+                            <h3 class="stat_header">Содержимое заказа</h3> Омлет по-казахски <span>(10 шт.)</span>, Токийская лапша <span>(7 шт.)</span>, Казахстанская пицца на кумысе <span>(10 шт.)</span>, Белгородская картошка-антошка <span>(10 шт.)</span>, Белорусский картофельный сок 1л <span>(10 шт.)</span>, Африканское мороженое <span>(10 шт.)</span></div>
+                        <div class="stat_comment">
+                            <h3 class="stat_header">Комментарий к заказу</h3> Хочу пиццу, а картошку не хочу</div>
+                    </section>
+                    <!-- Single archive order ends -->
+
+                </div>
+
+                <!-- Tab 2 ends -->
+
+
+                <!-- Tab 3 begins -->
+
+
+
+                <div class="tab_3_content" data-tab="tab_3">
+                    <div class="stat_wrapper">
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+
+                        <!-- Single table begins -->
+                        <section class="stat_table">
+                            <div class="general_info"><span class="table_num">1 стол</span>
+                                <div class="proceeds">25000$</div>
+                            </div>
+                            <div class="order_amount">16 заказов</div>
+                            <div class="time_borders">Начало смены: <span>04.11.2016 07:00</span>
+                                <br> Конец смены: <span>04.11.2016 19:00</span>
+                            </div>
+
+                        </section>
+
+                        <!-- Single table ends -->
+
+
+                    </div>
+
+
+
+
+
+                </div>
+                <!-- Tab 3 ends -->
 
             </div>
 

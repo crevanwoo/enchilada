@@ -257,8 +257,21 @@ $('.cat_plus').on('click', function () {
 /* !!! Cart begins */
 
 
+// работа минус плюс в товаре 
 
+$('.cart_minus').on('click', function () {
+    var amount_block = $(this).parent().find('.cart_num');
+    var amount_num = amount_block.text();
+    if (+amount_num > 1) {
+        amount_block.text(+amount_num - 1)
+    }
+})
 
+$('.cart_plus').on('click', function () {
+    var amount_block = $(this).parent().find('.cart_num');
+    var amount_num = amount_block.text();
+    amount_block.text(+amount_num + 1)
+})
 
 
 
@@ -363,13 +376,11 @@ $('.scroll_block').css('height', $(window).height() - ($(window).width() * 0.13 
 
 
 //set height on runner of custom scrolling container
-$('.modal_trigger').on('click', function () {
+$('.menu .modal_trigger').on('click', function () {
     var full_list = $('.modal_single_product_ingr li').innerHeight() * $('.modal_single_product_ingr li:not(:empty)').length + parseInt($('.modal_single_product_ingr').css('padding-top'));
     var full_height = parseInt($('.modal_content.scroll_container').css('padding-top')) +
         $(".modal_single_product_title").innerHeight() +
         $(".modal_single_product_weight").innerHeight() + $('.scroll_container .empty').innerHeight() + full_list;
-    console.log($(window).height())
-    console.log($(".modal_single_product_title").innerHeight())
     var runner_height = 100 / full_height * $(window).height() + '%';
     $('.scroll_runner').css('height', runner_height);
 })
@@ -549,8 +560,11 @@ function toggleAllergens(obj) {
 /* !!! Sidebar begins */
 
 $('.menu_button').on('click', function () {
+    console.log('dsf');
     slideSidebarTo();
+    console.log($('.sidebar_clickable_1 + p').innerHeight());
     calcSidebarParagraphsHeight();
+
     setHeightToParagraph(0);
     setDefaultImg();
     removeClassActiveFromLi()
@@ -656,29 +670,24 @@ function showSidebarList(obj) { //put when li opening but after detele and add a
 }
 
 
-function hideSidebarList() { //put when li closing
+function hideSidebarList() {
     $('.sidebar ul li.active + p').animate({
         height: 0
     })
 }
-
-
 
 /* Sidebar ends !!! */
 
 
 
 /* !!! Header begins */
+
 var header_state = true,
     scroll_direction;
 
 $(window).on('scroll', function (e) {
     calcScrollDirection();
-    /* if (window.pageYOffset > $('.main_header').innerHeight() && !header_down) {
-         headerSlideUp();
-         var header_down = true;  
-          header_state = false;
-     } else */
+
     if (scroll_direction == 'to bottom' && header_state) {
         headerSlideUp();
         header_state = false;
@@ -693,68 +702,49 @@ var coord_1 = window.pageYOffset,
 
 function calcScrollDirection() {
     coord_2 = window.pageYOffset;
-    if (coord_2 > coord_1) {
-        console.log('1' + ' ' + coord_2 + ' ' + coord_1);
+    if ((coord_2 - coord_1 > 10)) {
         scroll_direction = 'to bottom';
         coord_1 = coord_2
-    } else if (coord_2 < coord_1) {
-        console.log('2' + ' ' + coord_2 + ' ' + coord_1);
+    } else if ((coord_1 - coord_2 > 10)) {
         scroll_direction = 'to top';
         coord_1 = coord_2
-    } else if (coord_2 = coord_1) {
-        console.log('something wrong' + ' ' + coord_2 + ' ' + coord_1)
     }
-
-
+    /*else {
+           console.log('something wrong' + ' ' + coord_2 + ' ' + coord_1)
+       }*/
 }
-
-
 
 var header_full_height = $('.main_header').innerHeight() + $('.main_header .header_logo img').innerHeight() / 2;
 
 function headerSlideUp() {
     $('.main_header').animate({
         top: -header_full_height,
-
     })
 }
-
 
 
 function headerSlideDown() {
     $('.main_header').animate({
         top: 0,
-
     })
-
-
 }
-
-
-
-
-
-
-
 
 /* Header ends !!! */
 
 
 
 /* !!! Range relativity begins */
+
 $('input.slider_price').each(function () {
     setRightRange(this)
-
 })
 $('input.slider_kcal').each(function () {
     setRightRange(this)
-
 })
 
 function setRightRange(obj) {
     var value = +$(obj).attr('value');
     var active_bar = $(obj).parent().find('.selected-bar');
-
     var min_value = +active_bar.parent().parent().find('.scale span:first-of-type ins').text();
     var max_value = +active_bar.parent().parent().find('.scale span:last-of-type ins').text();
     var pointer = active_bar.parent().find('.pointer.high');
@@ -762,16 +752,6 @@ function setRightRange(obj) {
     var offset = ((100 * value) / length) + '%';
     active_bar.width(offset);
     pointer.css('left', offset)
-
-
-
 }
-
-
-
-
-
-
-
 
 /* Range relativity ends !!! */

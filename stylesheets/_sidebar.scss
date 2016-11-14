@@ -114,6 +114,7 @@
             }
             &+p {
                 //height: 0;
+                height: 120 * $px;//
                 overflow: hidden;
                 box-sizing: border-box;
                 padding: 0 45 * $px;
