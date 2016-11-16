@@ -688,13 +688,18 @@ var header_state = true,
 
 $(window).on('scroll', function (e) {
     calcScrollDirection();
+    if (window.pageYOffset < $(window).innerHeight() / 2 && !header_state) {
+        $('.main_header').css('top', '0');
 
-    if (scroll_direction == 'to bottom' && header_state) {
-        headerSlideUp();
-        header_state = false;
-    } else if (scroll_direction == 'to top' && !header_state) {
-        headerSlideDown();
-        header_state = true;
+    } else {
+
+        if (scroll_direction == 'to bottom' && header_state) {
+            headerSlideUp();
+            header_state = false;
+        } else if (scroll_direction == 'to top' && !header_state) {
+            headerSlideDown();
+            header_state = true;
+        }
     }
 })
 

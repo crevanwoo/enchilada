@@ -561,30 +561,31 @@ section.menu {
           position: absolute;
           top: 0;
           left: 0;
-          width: 50%;
+          width: 80%;
           height: 8.19vw;
           padding: 5.2vw 2.6vw 1.95vw 2.6vw;
           text-transform: uppercase;
           font-family: Medium;
           font-size: 3.9vw; }
-        section.menu section.category .category_products .category_product .icon {
-          width: 5.2vw;
-          height: auto; }
-        section.menu section.category .category_products .category_product .value {
-          position: absolute;
-          top: 0.78vw;
-          left: 4.68vw;
-          text-transform: uppercase;
-          font-family: Medium;
-          font-size: 2.34vw; }
-        section.menu section.category .category_products .category_product .cat_kcal {
-          position: absolute;
-          left: 2.86vw;
-          top: 14.95vw; }
-        section.menu section.category .category_products .category_product .cat_allerg {
-          position: absolute;
-          left: 14.69vw;
-          top: 14.95vw; }
+          section.menu section.category .category_products .category_product .category_product_title .cat_kcal,
+          section.menu section.category .category_products .category_product .category_product_title .cat_allerg {
+            display: inline-block;
+            position: relative;
+            padding-top: 1.3vw; }
+            section.menu section.category .category_products .category_product .category_product_title .cat_kcal .icon,
+            section.menu section.category .category_products .category_product .category_product_title .cat_allerg .icon {
+              display: inline-block;
+              width: 5.2vw;
+              height: auto;
+              position: absolute;
+              top: 30%; }
+            section.menu section.category .category_products .category_product .category_product_title .cat_kcal .value,
+            section.menu section.category .category_products .category_product .category_product_title .cat_allerg .value {
+              display: inline-block;
+              padding-left: 5.2vw;
+              text-transform: uppercase;
+              font-family: Medium;
+              font-size: 2.34vw; }
         section.menu section.category .category_products .category_product .cat_price {
           position: absolute;
           bottom: 4.29vw;
