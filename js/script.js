@@ -687,20 +687,17 @@ var header_state = true,
     scroll_direction;
 
 $(window).on('scroll', function (e) {
-    calcScrollDirection();
-    if (window.pageYOffset < $(window).innerHeight() / 2 && !header_state) {
-        $('.main_header').css('top', '0');
-
-    } else {
-
+    calcScrollDirection();    
+   if ( window.pageYOffset > window.innerHeight/2)
+  {console.log(scroll_direction)
         if (scroll_direction == 'to bottom' && header_state) {
             headerSlideUp();
             header_state = false;
         } else if (scroll_direction == 'to top' && !header_state) {
             headerSlideDown();
             header_state = true;
-        }
-    }
+        }}
+    
 })
 
 var coord_1 = window.pageYOffset,
