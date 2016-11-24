@@ -96,8 +96,6 @@ main {
   main .wrapper {
     background-color: white;
     height: 100%;
-    -webkit-box-shadow: 0px 4px 20px -3px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 4px 20px -3px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 4px 20px -3px rgba(0, 0, 0, 0.75); }
   main .content_header {
     height: 65px;
@@ -181,7 +179,9 @@ section.order {
         position: absolute;
         right: 15px;
         top: 50%;
-        transform: translateY(-50%); }
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%); }
       section.order .info .manage_info .payment_info.cash:after {
         width: 23px;
         height: 22px;
@@ -259,7 +259,9 @@ section.order {
           position: absolute;
           top: 50%;
           right: 20px;
-          transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+                  transform: translateY(-50%);
           font-size: 24rem;
           color: #f1e2cc; }
         section.order .info .order_info .single_order.active .product_amount {
@@ -285,7 +287,9 @@ section.order {
       top: 0;
       right: 20px;
       top: 50%;
-      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
       padding-right: 35px;
       font-size: 14rem; }
       section.order .comment .date:after {

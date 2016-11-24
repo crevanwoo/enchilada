@@ -283,13 +283,8 @@ $('.footer_cart').on('click', function () {
     $('.full_cart_products').css('height', $(window).height() - $('header').innerHeight() - $('.full_cart_header').innerHeight() - $('.full_cart_payment').innerHeight() - $('.full_cart_footer').innerHeight())
     productsTransfer(0);
     fixingFooterOnTop();
-    hideMenu();	
-	if (!header_state) {
-            headerSlideDown();
-            header_state = true;
-        }
+    hideMenu();		
 })
-
 
 
 function fixingFooterOnTop() {
@@ -763,3 +758,11 @@ function setRightRange(obj) {
 }
 
 /* Range relativity ends !!! */
+
+
+$('.footer_cart').on('click', function() {	
+	if (!header_state) {
+            headerSlideDown();
+            header_state = true;
+        }		
+})
