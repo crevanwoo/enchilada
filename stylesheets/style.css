@@ -1212,8 +1212,38 @@ body.hidden {
   .filters .filters_ingridients .filters_title:after {
     content: '+';
     right: 5.2vw; }
-  .filters .filters_allergens .filter_item_name {
+  .filters .filters_allergens * {
     position: relative; }
+  .filters .filters_allergens .allergens_single_category,
+  .filters .filters_allergens .allergens_category_title {
+    border-bottom: 0.26vw solid #e4d4bb; }
+  .filters .filters_allergens .allergens_single,
+  .filters .filters_allergens .allergens_category_title,
+  .filters .filters_allergens .allergens_category_block {
+    padding: 1.3vw 2.6vw; }
+  .filters .filters_allergens .allergens_category_title,
+  .filters .filters_allergens .allergens_category_block,
+  .filters .filters_allergens .allergens_single_category {
+    min-height: 14.3vw; }
+  .filters .filters_allergens .allergens_category_block {
+    margin: 0 3.9vw;
+    padding-left: 6.5vw; }
+    .filters .filters_allergens .allergens_category_block:not(:first-of-type) {
+      border-top: 0.26vw solid #e4d4bb; }
+  .filters .filters_allergens .allerg_description {
+    padding-top: 1.3vw;
+    padding-bottom: 1.3vw; }
+  .filters .filters_allergens .filter_delete {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(211, 47, 47, 0.8) 50%, rgba(255, 255, 255, 0) 100%); }
+    .filters .filters_allergens .filter_delete.active {
+      opacity: 1;
+      transition: 0.2s; }
   .filters .filters_ingridients,
   .filters .filters_allergens {
     height: 100vh;
@@ -1293,13 +1323,6 @@ body.hidden {
           .filters .filters_ingridients .filters_category ul .filter_remove.active,
           .filters .filters_allergens .filters_category ul .filter_remove.active {
             background-image: linear-gradient(to left, rgba(61, 175, 117, 0.8) 0%, rgba(255, 255, 255, 0) 100%); }
-        .filters .filters_ingridients .filters_category ul .filter_delete,
-        .filters .filters_allergens .filters_category ul .filter_delete {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          opacity: 0;
-          background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(211, 47, 47, 0.8) 50%, rgba(255, 255, 255, 0) 100%); }
   .filters .empty {
     height: 18.2vw; }
   .filters .filters_footer {
