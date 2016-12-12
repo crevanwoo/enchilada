@@ -984,35 +984,43 @@ section.menu {
       font-size: 4.68vw; }
     #single_product .modal_content .modal_single_product_ingr {
       padding-top: 6.5vw; }
-      #single_product .modal_content .modal_single_product_ingr li {
+      #single_product .modal_content .modal_single_product_ingr > li {
         box-sizing: border-box;
+        word-wrap: break-word;
         position: relative;
-        height: 15.6vw;
+        min-height: 15.6vw;
         padding: 5.2vw;
         font-family: Medium;
         font-size: 3.9vw; }
-        #single_product .modal_content .modal_single_product_ingr li:first-of-type:before {
+        #single_product .modal_content .modal_single_product_ingr > li:first-of-type:before {
           content: ''; }
-        #single_product .modal_content .modal_single_product_ingr li:empty {
+        #single_product .modal_content .modal_single_product_ingr > li:empty {
           height: 0;
           padding: 0; }
-        #single_product .modal_content .modal_single_product_ingr li:before {
+        #single_product .modal_content .modal_single_product_ingr > li:before {
           content: '\25CF';
           position: absolute;
           top: 0;
           right: 0;
           left: 0;
           font-size: 2.34vw; }
-        #single_product .modal_content .modal_single_product_ingr li .single_page_allergen {
-          position: absolute;
+        #single_product .modal_content .modal_single_product_ingr > li .single_page_allergen {
+          display: inline-block;
           top: 25%;
           right: 20%;
-          width: 6.5vw;
+          width: auto;
+          margin-top: 1.3vw;
           height: 6.5vw;
           line-height: 6.5vw;
           text-align: center;
           border: 0.26vw solid #b9282b;
-          border-radius: 50%; }
+          border-radius: 1.3vw; }
+          #single_product .modal_content .modal_single_product_ingr > li .single_page_allergen li {
+            display: inline-block;
+            height: 100%;
+            padding: 0 1.3vw; }
+          #single_product .modal_content .modal_single_product_ingr > li .single_page_allergen li:not(:last-of-type) {
+            border-right: 0.26vw solid #b9282b; }
     #single_product .modal_content .empty {
       height: 22.1vw; }
   #single_product .modal_single_product_footer {
