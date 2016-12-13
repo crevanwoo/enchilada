@@ -1,8 +1,9 @@
 $(document).ready(function () {
+    //   $(".content").customScrollbar();
 
-
-    //   $(".tab_1_content, .tab_2_content, .tab_3_content").customScrollbar();
-
+    $(".tab_1_content, .tab_2_content, .tab_3_content").customScrollbar();
+    //$(".tab_2_content").customScrollbar();
+    //$(".tab_3_content").customScrollbar();
 });
 
 
@@ -82,21 +83,3 @@ $('.close_order_button').on('click', function () {
 })
 
 /**/
-
-
-
-
-var tab_1_h = 0;
-
-function f_tab_1_h() {
-    $('.tab_1_content >*').each(function () {
-        tab_1_h += $(this).innerHeight();
-
-    })
-    return tab_1_h
-}
-console.log(f_tab_1_h())
-//$('.tab_1_content').css('height', f_tab_1_h())
-//$('.tab_1_content').css('height', f_tab_1_h())
-console.log($('.tab_1_content .comment .text').outerHeight())
-
