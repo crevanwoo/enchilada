@@ -76,10 +76,20 @@ $('.payment_info').on('click', function () {
     $(this).removeClass('cash card').addClass('done')
 })
 
+
+var element;
 $('.close_order_button').on('click', function () {
+    element = $(this).parent().parent().parent();
+  
     $(this).parent().parent().parent().animate({
         height: 0
-    })
+    }, loadScroll) 
+     
+     
+    
 })
+function loadScroll(){$(".tab_1_content").customScrollbar()}
+
+
 
 /**/
