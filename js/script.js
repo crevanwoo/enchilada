@@ -125,11 +125,11 @@ function setProductHeight() {
     $('.category_product').css('height', $('.category_product').width())
 }
 
-$(window).on('resize', function () {
+/*$(window).on('resize', function () {
     // при изменении размеров окна размер элементов - блюд пересчитывается
     $('.category_product').css('height', $('.category.active .category_product').width());
     cat_prod_width = $('.category.active .category_product').width()
-})
+})*/
 
 
 /**
