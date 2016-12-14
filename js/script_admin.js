@@ -80,16 +80,24 @@ $('.payment_info').on('click', function () {
 var element;
 $('.close_order_button').on('click', function () {
     element = $(this).parent().parent().parent();
-  
+
     $(this).parent().parent().parent().animate({
         height: 0
-    }, loadScroll) 
-     
-     
-    
+    }, loadScroll)
+
+
+
 })
-function loadScroll(){$(".tab_1_content").customScrollbar()}
+
+function loadScroll() {
+    $(".tab_1_content").customScrollbar()
+}
 
 
+
+
+$('.tab.tab_2').on('click', function () {
+    $(".tab_2_content").customScrollbar();
+})
 
 /**/
