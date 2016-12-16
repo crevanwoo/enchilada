@@ -1,7 +1,8 @@
+var tab_index = 'tab_1';
 $(document).ready(function () {
     //   $(".content").customScrollbar();
 
-    $(".tab_1_content, .tab_2_content, .tab_3_content").customScrollbar();
+    //$(".tab_1_content, .tab_2_content, .tab_3_content").customScrollbar();
     //$(".tab_2_content").customScrollbar();
     //$(".tab_3_content").customScrollbar();
 });
@@ -25,6 +26,8 @@ $('.tab').on('click', function () {
 function switchTabs(obj) {
     hideTab($('.tab.active').attr('data-tab'));
     showTab($(obj).attr('data-tab'));
+    tab_index = $(obj).attr('data-tab');  
+   
     switchTabButtons(obj);
 }
 
@@ -35,12 +38,12 @@ function switchTabButtons(obj) {
 
 function hideTab(prevBtn) {
     // $('.content').find('[data-tab="' + prevBtn + '"]').attr('hidden', '');
-    $('.content').find('[data-tab="' + prevBtn + '"]').css('z-index', '0')
+    $('.content').find('[data-tab="' + prevBtn + '"]').removeClass('active')
 }
 
 function showTab(currentBtn) {
     // $('.content').find('[data-tab="' + currentBtn + '"]').removeAttr('hidden');
-    $('.content').find('[data-tab="' + currentBtn + '"]').css('z-index', '10')
+    $('.content').find('[data-tab="' + currentBtn + '"]').addClass('active')
 }
 
 /* Switch tabs ends */
@@ -83,21 +86,18 @@ $('.close_order_button').on('click', function () {
 
     $(this).parent().parent().parent().animate({
         height: 0
-    }, loadScroll)
+    }, scrollInit)
 
 
 
 })
 
-function loadScroll() {
-    $(".tab_1_content").customScrollbar()
-}
 
 
 
+/*$('.close_order_button').on('click', function () {
+    scrollInit()
+    
+})*/
 
-$('.tab.tab_2').on('click', function () {
-    $(".tab_2_content").customScrollbar();
-})
 
-/**/
