@@ -1262,7 +1262,7 @@ body.hidden {
     transition: 0.5s;
     background-color: #f1e2cb;
     padding-top: 13vw;
-    z-index: 2;
+    z-index: 1001;
     overflow: auto;
     box-sizing: border-box; }
     .filters .filters_ingridients *,
