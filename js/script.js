@@ -428,6 +428,8 @@ $('.filter_button').on('click', showFilter);
 
 $('.filters_close').on('click', hideFilter);
 
+$('.header_logo img').on('click', hideFilter);
+
 
 
 
