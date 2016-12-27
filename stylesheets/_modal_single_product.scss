@@ -32,6 +32,7 @@
         min-height: 100%;
         padding-top: $top;
         text-align: center;
+        box-sizing: border-box;
         .modal_single_product_title {
             position: relative;
             height: 120 * $px;

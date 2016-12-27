@@ -969,7 +969,8 @@ section.menu {
     position: relative;
     min-height: 100%;
     padding-top: 40.95vw;
-    text-align: center; }
+    text-align: center;
+    box-sizing: border-box; }
     .modal_single_product .modal_content .modal_single_product_title {
       position: relative;
       height: 15.6vw;
