@@ -1,6 +1,8 @@
-#single_product {
+.modal_single_product {
     $top: 315 * $px;
-    min-height: 100vh;
+    //min-height: 100vh;
+    height: 100vh;
+    overflow: auto;
     background-color: $light_beige;
     .modal_background {
         position: absolute;
