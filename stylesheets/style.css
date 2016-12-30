@@ -174,6 +174,40 @@ textarea:-moz-placeholder {
   display: block;
   clear: both; }
 
+@media all and (min-width: 501px) {
+  body > *:not(.landscape_warning) {
+    display: none;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    z-index: -1; } }
+
+@media all and (max-width: 500px) {
+  .landscape_warning {
+    display: none;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    z-index: -1; } }
+@media all and (min-width: 501px) {
+  .landscape_warning {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: block; }
+    .landscape_warning div {
+      position: absolute;
+      width: 90%;
+      height: 10%;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      text-align: center; } }
+
 html,
 body {
   margin: 0;
@@ -1068,6 +1102,10 @@ section.menu {
     line-height: 300%;
     font-family: Medium;
     font-size: 3.38vw; }
+  .pop_allergens .allerg_close {
+    position: fixed;
+    top: 93.9vh;
+    transform: translateY(-90vh); }
 
 .scroll_container_wrapper {
   position: relative;

@@ -204,7 +204,7 @@ $('.cat_order').on('click', function () {
 })
 
 
-var close_product = function () {
+function close_product() {
     if (actual_product) {
         actual_product.removeClass('active');
         actual_product.find('.cat_calc').css('display', 'none');
@@ -277,6 +277,7 @@ $('.cart_plus').on('click', function () {
 
 //open cart
 $('.footer_cart').on('click', function () {
+     close_product();
     $('.full_cart').animate({
         height: $(window).height() - $('header').innerHeight(),
     })
@@ -426,9 +427,8 @@ $('.slider_kcal').on('change', function () {
 
 $('.filter_button').on('click', showFilter);
 
-$('.filters_close').on('click', hideFilter);
+$('.filters_close, .header_logo img, .filters_found').on('click', hideFilter);
 
-$('.header_logo img').on('click', hideFilter);
 
 
 

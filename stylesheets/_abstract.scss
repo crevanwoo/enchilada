@@ -152,9 +152,10 @@ input:-moz-placeholder {
     /* Firefox 18- */
     @include standart_font;
 }
+
 $textarea_height: 85 * $px;
 @mixin font_prod_comment {
-     font-family: Regular;
+    font-family: Regular;
     font-size: $fs_18;
     color: $dark_grey;
     line-height: $textarea_height - 40 * $px;
@@ -246,3 +247,41 @@ textarea:-moz-placeholder {
     }
 }
 
+body >*:not(.landscape_warning) {
+    @media all and (min-width: 501px) {
+        display: none;
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        z-index: -1;
+    }
+}
+
+.landscape_warning {
+    @media all and (max-width: 500px) {
+        display: none;
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        z-index: -1;
+    }
+    @media all and (min-width: 501px) {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: block;
+        div {
+            position: absolute;
+            width: 90%;
+            height: 10%;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            text-align: center;
+        }
+    }
+}

@@ -86,7 +86,7 @@
                     line-height: $height;
                     text-align: center;
                     border: 2 * $px solid $deep_red;
-                    border-radius: 10 * $px;                 
+                    border-radius: 10 * $px;
                     li {
                         display: inline-block;
                         height: 100%;
@@ -155,5 +155,8 @@
     }
     .allerg_close {
         @extend %pop_close_button;
+        position: fixed;
+        top: 93.9vh;
+        transform: translateY(-90vh);
     }
 }
