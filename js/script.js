@@ -125,11 +125,14 @@ function setProductHeight() {
     $('.category_product').css('height', $('.category_product').width())
 }
 
-/*$(window).on('resize', function () {
+$(window).on('resize', function () {
     // при изменении размеров окна размер элементов - блюд пересчитывается
-    $('.category_product').css('height', $('.category.active .category_product').width());
+	$('.category_products').each(function() {
+	if ($(this).parent().find('.header_field').hasClass('active')) {$(this).find('.category_product').css('height', $('.category.active .category_product').width());
     cat_prod_width = $('.category.active .category_product').width()
-})*/
+	}
+	})
+})
 
 
 /**
@@ -768,3 +771,7 @@ $('.footer_cart').on('click', function() {
             header_state = true;
         }		
 })
+
+/*$('li.proposals').on('click', function() {
+location.href = "proposals.html"
+})*/
